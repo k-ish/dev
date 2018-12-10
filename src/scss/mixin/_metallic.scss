@@ -1,0 +1,79 @@
+// metallic ratio
+
+$ratio-gold: 1.618;
+$ratio-silver: 1.414;
+$ratio-platinum: 1.732;
+$ratio-bronze: 3.303;
+
+// width から計算
+@mixin metallic-by-width($width, $ratio: $ratio-gold) {
+  width: $width;
+  height: round($width / $ratio);
+}
+
+// height から計算
+@mixin metallic-by-height($height, $ratio: $ratio-gold) {
+  width: round($height * $ratio);
+  height: $height;
+}
+
+// width から計算（縦長）
+@mixin metallic-by-width-portrait($width, $ratio: $ratio-gold) {
+  width: $width;
+  height: round($width * $ratio);
+}
+
+// height から計算（縦長）
+@mixin metallic-by-height-portrait($height, $ratio: $ratio-gold) {
+  width: round($height / $ratio);
+  height: $height;
+}
+
+//横幅から分割
+@mixin metallic-two-col($base-width, $ratio: $ratio-gold) {
+  $width: round($base-width / $ratio);
+  width: $width;
+  height: $width;
+  &-short {
+    width: round($base-width - $width);
+    height: $width;
+  }
+}
+
+
+
+// 黄金比を指定した数だけ分割
+@mixin create-metallic-gold($base-width, $boxes) {
+  $width: round($base-width / $ratio-gold);
+  $height: $width;
+
+  @for $i from 1 through $boxes {
+    // $boxesの数だけクラス生成
+    @if $i < $boxes {
+      // 最後のクラスじゃないとき
+      &-#{$i} {
+        width: $width;
+        height: $height;
+      }
+      $width: round($width / $ratio-gold);
+      $height: $width;
+    } @else {
+      // 最後のクラスのとき
+      $long: round($width * $ratio-gold);
+      $short: $width;
+      @if $i % 2==0 {
+        // 最後のクラスが偶数のとき
+        &-#{$i} {
+          width: $short;
+          height: $long;
+        }
+      } @else {
+        // 最後のクラスが奇数のとき
+        &-#{$i} {
+          width: $long;
+          height: $short;
+        }
+      }
+    }
+  }
+}

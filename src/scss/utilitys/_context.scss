@@ -1,0 +1,82 @@
+// color
+
+@if $create-text-color {
+  @each $key, $value in $colors {
+    .txt-#{$key} {
+      color: $value $im;
+    }
+  }
+
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $color in $colors {
+       .txt-#{$name}-#{$key} {
+          color: $color $im;
+        }
+      }
+    }
+  }
+}
+
+
+
+// font-weight
+
+@if $create-text-weight {
+  @each $name, $weight in $font-weight {
+    .txt-#{$name} {
+      font-weight: $weight $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $weight in $font-weight {
+        .txt-#{$name}-#{$key} {
+          font-weight: $weight $im;
+        }
+      }
+    }
+  }
+}
+
+
+
+// text-align
+
+@if $create-text-align {
+  @each $name, $align in $text-align {
+    .txt-#{$name} {
+      text-align: $align $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $align in $text-align {
+        .txt-#{$name}-#{$key} {
+          text-align: $align $im;
+        }
+      }
+    }
+  }
+}
+
+
+
+// vertical-align
+
+@if $create-vertical-align {
+  @each $name, $align in $vertical-align {
+    .vertical-#{$name} {
+      vertical-align : $align $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $align in $vertical-align {
+        .vertical-#{$name}-#{$key} {
+          vertical-align: $align $im;
+        }
+      }
+    }
+  }
+}

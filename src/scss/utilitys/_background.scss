@@ -1,0 +1,18 @@
+// background-color
+
+@if $create-bg-color {
+  @each $name, $color in $colors {
+    .bg-#{$name} {
+      background-color: $color $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $color in $colors {
+        .bg-#{$name}-#{$key} {
+          background-color: $color $im;
+        }
+      }
+    }
+  }
+}

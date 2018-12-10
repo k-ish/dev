@@ -1,0 +1,76 @@
+// flex box
+
+@mixin flex(
+		$display: flex,
+		$flex-direction: null,
+		$flex-wrap: null,
+		$flex-flow: null,
+		$justify-content: null,
+		$align-items: null,
+		$align-content: null,
+		$gutter: null,
+		$grid-type: skeleton
+	){
+
+	@if $display {
+		display: $display;
+	}
+
+	@if $flex-direction {
+		flex-direction: $flex-direction;
+	}
+
+	@if $flex-wrap {
+		flex-wrap: $flex-wrap;
+	}
+
+	@if $flex-flow {
+		flex-flow: $flex-flow;
+	}
+
+	@if $justify-content {
+		justify-content: $justify-content;
+	}
+
+	@if $align-items {
+		align-items: $align-items;
+	}
+
+	@if $align-content {
+		align-content: $align-content;
+	}
+
+	@if $grid-type == skeleton {
+		@if $gutter {
+			@include grid-gutter($margin: 0 $gutter / 2 * -1);
+		}
+	}
+
+	@content;
+}
+
+
+
+// flex base
+
+@mixin flex-base {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+
+
+// order
+
+@mixin flex-order($num) {
+  order: $num;
+}
+
+
+
+// grow
+
+@mixin flex-grow($num) {
+  flex-grow: $num;
+}

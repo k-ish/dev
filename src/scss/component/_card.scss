@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+
+//
+// card
+//
+
+@mixin card ($width:null, $gutter:null, $radisus:null, $padding:1em) {
+    width: $width;
+    margin: $gutter;
+    border-radius: $radisus;
+    &_img {
+        border-radius: $radisus $radisus 0 0;
+        min-width: 100%;
+        height: auto;
+    }
+    &_body {
+        padding: $padding;
+    }
+}

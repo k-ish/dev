@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+// media query
+
+
+// mobile
+$bp-up: (
+  'sm': 'screen and (min-width: 576px)',
+  'md': 'screen and (min-width: 768px)',
+  'lg': 'screen and (min-width: 992px)',
+  'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+// pc
+$bp-down: (
+  'xl': 'screen and (max-width: 1200px)',
+  'lg': 'screen and (max-width: 992px)',
+  'md': 'screen and (max-width:768px)',
+  'sm': 'screen and (max-width: 576px)',
+) !default;
+
+// 利用するBPを代入
+$breakpoints: $bp-down;
+
+// media query for mobile
+@mixin mq-up($breakpoint: md) {
+  @media #{map-get($bp-up, $breakpoint)} {
+    @content;
+  }
+}
+// media query for pc
+@mixin mq-down($breakpoint: md) {
+  @media #{map-get($bp-down, $breakpoint)} {
+    @content;
+  }
+}
+
+// make media query classes
+@mixin mq-all {
+    @each $value in map-values($breakpoints) {
+        @media #{$value} {
+            @content;
+        }
+    }
+}
+
+
+
+//汎用クラス生成用(仮)　プレフィックス付き
+
+$mq-none: (   //クラス名に付けることでメディアクエリの識別子を付与
+  'none':'0'
+);
+
+$for-mq-classes: (
+  map-merge($mq-none, $breakpoints)
+);
+
+$bp-infix: "" !default;
+
+@mixin mq-classes {
+  @each $key, $value in $for-mq-classes {
+    @if $key == none {
+      @content;
+    }@else{
+      @media #{$value} {
+        $bp-infix: "-" + $key !global;  //クラス名に付与するbp識別子
+        @content;
+      }
+      $bp-infix: "" !global;
+    }
+  }
+}

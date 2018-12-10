@@ -1,0 +1,25 @@
+// 親がrelative の場合、垂直中央配置
+
+@mixin absolute-middle ($width:null, $height:null) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: $width;
+  height: $height;
+}
+
+
+
+// 親がrelative の場合、水平中央配置
+
+@mixin absolute-center ($width:null, $height:null) {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-right: 0;
+  margin-left: 0;
+  width: $width;
+  height: $height;
+}

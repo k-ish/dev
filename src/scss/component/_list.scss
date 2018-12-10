@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+//
+// list
+//
+
+@mixin list-marker($class: list, $end: 4) {
+    %markBase {
+        //共通スタイル
+        padding-left: 15px;
+        background-position: 0em 0.5em;
+        background-repeat: no-repeat;
+    }
+
+    @for $i from 1 through $end {
+        @if $i < 10 {
+            //ゼロパディング
+            $i: 0#{$i};
+        }
+
+        .#{$class}_#{$i} {
+            @extend %markBase;
+            background-image: url(../images/#{$i}.png);
+        }
+    }
+}

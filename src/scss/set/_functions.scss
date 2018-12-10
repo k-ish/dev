@@ -1,0 +1,221 @@
+
+// functions
+// ---------------------------------------------------
+
+// 暗清色
+
+@function shade($color, $weight) {
+  @return mix(#000, $color, $weight);
+}
+
+// 明清色
+@function tint($color, $weight) {
+  @return mix(#fff, $color, $weight);
+}
+
+// 引数の単位を削除し、値のみ返す
+@function strip-units($number){
+	@return $number / ($number * 0 + 1);
+}
+
+
+
+// native
+// ---------------------------------------------------
+
+
+// RGB形式の色を操作する関数
+
+
+// rgb($color)
+// // 10進数または%指定のRGB値を16進数のRGB値に変換します。
+
+// rgba($color, $alpha)
+// // RGBA値を10進数のRGBA値に変換します。CSSだと透明度付きの場合16進数で指定できませんが、16進数のRGB値を指定しても10進数に変換してくれます。また、キーワードも変換してくれます。
+
+// red($color)
+// // 16進数のRGB値のR値（赤）を返します。
+
+// green($color)
+// // 16進数のRGB値のG値（緑）を返します。
+
+// blue($color)
+// // 16進数のRGB値のB値（青）を返します。
+
+// mix($color-1, $color-2, [$weight])
+// // 2つの色を混ぜて中間色が作れます。
+
+
+
+//
+// HSL形式の色を操作する関数
+//
+
+// hsl($hue, $saturation, $lightness)
+// HSL形式の値を16進数のRGB値に変換します。
+
+// hsla($hue, $saturation, $lightness, $alpha)
+// HSLA形式の値をRGBA値に変換します。
+
+// hue($color)
+// HSL形式からhue値（色相）を返します。
+
+// saturation($color)
+// HSL形式からsaturation値（彩度）を返します。
+
+// lightness($color)
+// HSL形式からlightness値（明度）を返します。
+
+// adjust-hue($color, $degrees)
+// 指定した色のhue値（色相）の角度を変更します。
+
+// lighten($color, $amount)
+// 指定した色の明度を上げて明るくします。
+
+// darken($color, $amount)
+// 指定した色の明度を下げて暗くします。
+
+// saturate($color, $amount)
+// 指定した色の彩度を上げます。
+
+// desaturate($color, $amount)
+// 指定した色の彩度を下げます。
+
+// grayscale($color)
+// 指定した色をグレースケールに変換します。
+
+// complement($color)
+// 指定した色の補色（※）を返します。
+// ※色相環 で正反対に位置する関係の色の組合せ。
+
+// invert($color)
+// 指定した色を反転します。
+
+
+
+//
+// ■透明度を操作する関数
+//
+
+// alpha($color) / opacity($color)
+// 指定した色の透明度を返します。また、alpha() は、マイクロソフト独自の alpha(opacity=30) をサポートしているため、エラーになりません。
+
+// rgba($color, $alpha)
+// あらゆる色の透明度を変更します。この関数は、RGB形式の色を操作する関数と同じです。
+
+// opacify($color, $amount) / fade-in($color, $amount)
+// 指定した色の透明度を下げてより不透明にします。不透明にした結果、値が1以上になった場合は、RGB形式で返します。
+
+// transparentize($color, $amount) / fade-out($color, $amount)
+// 指定した色の透明度を上げてより透明にします。
+
+// ■その他の色を調整する関数
+// adjust-color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
+// RGB,hue,彩度,明度...あらゆる色の値を一度に調整出来ます。
+// 指定できる値は、次の7種類になります。
+// $red
+// $green
+// $blue
+// $hue
+// $saturation
+// $lightness
+// $alpha
+
+// scale-color($color, [$red], [$green], [$blue], [$saturation], [$lightness], [$alpha])
+// 現在の値から最大値までの変化の割合を指定して操作します。指定できる値は、adjust-color() と同じです。
+
+// change-color($color, [$red], [$green], [$blue], [$hue], [$saturation], [$lightness], [$alpha])
+// 指定した色の値を変更出来ます。指定できる値は、adjust-color() と同じです。
+
+// ie-hex-str($color)
+// 指定した色を、IE独自実装のfilterプロパティで利用できる形式に変換します。
+
+
+
+//
+// ■文字列を操作する関数
+//
+
+// unquote($string)
+// 文字列からクォーテーションを取り除きます。
+
+// quote($string)
+// 文字列にクォーテーションを追加します。
+
+
+
+//
+// ■数値を操作する関数
+//
+
+// percentage(value)
+// 指定した数値をパーセント形式に変換します。
+
+// round($value)
+// 指定した数値を四捨五入した値を返します。
+
+// ceil($value)
+// 指定した数値の切り上げをした値を返します。
+
+// floor($value)
+// 指定した数値の切り捨てをした値を返します。
+
+// abs($value)
+// 指定した数値の絶対値を返します。
+
+// min($x1, $x2, c)
+// 指定した複数の値のうち、最小値を返します。
+
+// max($x1, $x2, c)
+// 指定した複数の値のうち、最大値を返します。
+
+
+
+//
+// ■リストを操作する関数
+//
+
+// length($list)
+// 指定したリストの項目数（半角スペースで区切られた数）を返します。
+
+// nth($list, $n)
+// 指定したリストの内、N番目にある値を返します。
+
+// join($list1, $list2, [$separator])
+// 2つのリストを一つに結合します。
+
+// append($list1, $val, [$separator])
+// リストの最後に単一の値を追加します。
+
+// zip($list1, $list2, c)
+// 複数のリストを、一つの多次元リストに統合します。
+
+// index($list, $value)
+// リストの中のある値を見つけ出しそのインデックスを返します。値がない場合はfalseを返します。
+
+
+
+//
+// ■内部的な値を確認する関数
+//
+
+// type-of($value)
+// 変数のデータタイプを返します。
+
+// unit($number)
+// 指定した数値に関連した単位を返します。
+
+// unitless($number)
+// 指定した数値に単位があるかどうかを返します。単位の有無に寄って「true」か「faluse」を返します。
+
+// comparable($number-1, $number-2)
+// 指定した2つの数値が、比較追加可能かどうかを返します。
+
+
+
+//
+// ■条件に応じて値を出し分ける関数
+//
+
+// if($condition, $if-true, $if-false)
+// $conditionの条件が、真なら $if-true の値を、偽なら $if-false の値を返します。

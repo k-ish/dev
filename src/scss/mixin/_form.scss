@@ -1,0 +1,14 @@
+// form mixins
+// ---------------------------------------------------
+
+// placeholder の変更
+
+@mixin placeholder {
+    $vendor: "input::-webkit-input-placeholder", "input:-moz-placeholder",
+        "input::-moz-placeholder", "input:-ms-input-placeholder";
+    @each $selector in $vendor {
+        .#{$selector} {
+            @content;
+        }
+    }
+}

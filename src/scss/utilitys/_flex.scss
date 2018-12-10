@@ -1,0 +1,137 @@
+// flex-direction
+
+@if $create-flex-direction {
+  @include mq-classes {
+    @each $name, $value in $flex-direction {
+      .f-direction-#{$name}#{$bp-infix} {
+        flex-direction: $value;
+      }
+    }
+  }
+}
+
+
+
+// flex-wrap
+
+@if $create-flex-wrap {
+  @include mq-classes {
+    @each $name, $value in $flex-wrap {
+      .f-#{$name}#{$bp-infix} {
+        flex-wrap: $value;
+      }
+    }
+  }
+}
+
+
+
+// flex-wrap
+
+@if $create-flex-wrap {
+  @include mq-classes {
+    @each $name, $value in $flex-wrap {
+      .f-#{$name}#{$bp-infix} {
+        flex-wrap: $value;
+      }
+    }
+  }
+}
+
+
+
+// justify-content
+
+@if $create-justify-content {
+  @include mq-classes {
+    @each $name, $value in $justify-content {
+      .f-row-align-#{$name}#{$bp-infix} {
+        justify-content: $value;
+      }
+    }
+  }
+}
+
+
+
+// align-items
+
+@if $create-align-items {
+  @include mq-classes {
+    @each $name, $value in $align-items {
+      .f-v-items-#{$name}#{$bp-infix} {
+        align-items: $value;
+      }
+    }
+  }
+}
+
+
+
+// align-content
+
+@if $create-align-content {
+  @include mq-classes {
+    @each $name, $value in $align-content {
+      .f-v-content-#{$name}#{$bp-infix} {
+        align-content: $value;
+      }
+    }
+  }
+}
+
+
+
+// order
+
+@if $create-flex-order {
+  @include mq-classes {
+    @for $i from 1 through $order-end-value {
+      .f-order-#{$i}#{$bp-infix} {
+        order: $i;
+      }
+    }
+  }
+}
+
+
+
+// flex-grow
+
+@if $create-flex-grow {
+  @include mq-classes {
+    @for $i from 1 through $grow-end-value {
+      .f-grow-#{$i}#{$bp-infix} {
+        flex-grow: $i;
+      }
+    }
+  }
+}
+
+
+
+// flex-shrink
+
+@if $create-flex-shrink {
+  @include mq-classes {
+    @for $i from 1 through $shrink-end-value {
+      .shrink-#{$i}#{$bp-infix} {
+        flex-shrink: $i;
+      }
+    }
+  }
+}
+
+
+
+// align-self
+
+@if $create-align-self {
+  @include mq-classes {
+    @each $name, $value in $align-self {
+      .f-v-self-#{$name}#{$bp-infix} {
+        align-self: $value;
+      }
+    }
+  }
+}

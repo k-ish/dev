@@ -1,0 +1,18 @@
+// position
+
+@if $create-position {
+  @each $name, $position in $position-list {
+    .pos-#{$name} {
+      position: $position $im;
+    }
+  }
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @each $name, $position in $position-list {
+        .pos-#{$name}-#{$key} {
+          position: $position $im;
+        }
+      }
+    }
+  }
+}

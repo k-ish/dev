@@ -1,0 +1,41 @@
+
+// vertical rhythm
+// 課題：セクション間の余白調整
+// ---------------------------------------------------
+
+@mixin vertical-rhythm(
+
+  $base-font: 16px,         // ベースフォントサイズ
+  $base-line-height: 1.5,   // ベースの行間 24px
+  $heading: 3,              // 見出しの数
+  $jump-rate: 1             // base-font からのジャンプ率
+
+) {
+
+  $jump: $base-font * $jump-rate;             // ジャンプ率計算
+  $base-unit: $base-line-height * $base-font; // ベースのリズム 24px
+  $heading-start: $heading;                   // 見出しの開始番号
+
+  // 要素間マージン
+  %base-margin-bottom {
+    letter-spacing: 1px;
+    margin-bottom: $base-unit;
+  }
+
+  // 段落のリズム
+  p {
+    font-size: $base-font;
+    line-height: $base-line-height;
+    @extend %base-margin-bottom;
+  }
+
+  // 見出しのリズム
+  @for $i from 1 through $heading {
+    h#{$heading-start} {
+      font-size: $base-font + $jump * $i;
+      line-height: $base-line-height;
+      @extend %base-margin-bottom;
+    }
+    $heading-start: $heading-start - 1;
+  }
+}

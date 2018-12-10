@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+//
+// dl
+//
+
+// ラベルリスト
+@mixin dl-list {
+    .dl_style {
+        display: table;
+    }
+    .dl_style dt,
+    .dl_style dd {
+        display: table-cell;
+        box-sizing: border-box;
+        padding: 5px 10px;
+    }
+    .dl_style dt {
+        text-align: center;
+        display: block;
+        border-radius: 4px;
+        background: #40acfd;
+        color: #fff;
+        text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.2);
+        min-width: 100px;
+    }
+    .dl_style.dl_pink dt {
+        background: #ff6868;
+    }
+}

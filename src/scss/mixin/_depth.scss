@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+// マテリアルデザイン用のシンプルな影（1→5につれて深くなる）
+$simple-shadow-depth: (
+  1: "rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px",
+  2: "rgba(0, 0, 0, 0.16) 0px 3px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px",
+  3: "rgba(0, 0, 0, 0.19) 0px 10px 30px, rgba(0, 0, 0, 0.23) 0px 6px 10px",
+  4: "rgba(0, 0, 0, 0.25) 0px 14px 45px, rgba(0, 0, 0, 0.22) 0px 10px 18px",
+  5: "rgba(0, 0, 0, 0.3) 0px 19px 60px, rgba(0, 0, 0, 0.22) 0px 15px 20px"
+);
+
+// box-shadowの深さを $depth:1〜5 で調整
+@mixin simple-box-depth($depth) {
+  box-shadow: unquote(map-get($simple-shadow-depth, $depth));
+}
+// text-shadowの深さを $depth:1〜5 で調整
+@mixin simple-text-depth($depth) {
+  text-shadow: unquote(map-get($simple-shadow-depth, $depth));
+}
+
+// シンプルな影の汎用クラスを生成
+@mixin simple-box-depth-classes($name: depth) {
+  @each $key, $depth in $simple-shadow-depth {
+    .#{$name}-#{$key} {
+      box-shadow: unquote($depth);
+    }
+  }
+}
+
+// マテリアルデザイン用の影 引数に高度を指定 1~24
+@mixin material-box-depth($elevation: 1, $color: #000, $opacity: 0.2) {
+  box-shadow: 0 4px #{$elevation}px rgba($color, $opacity);
+}
+
+// マテリアルデザイン用の影の汎用クラスをを生成　高度1～24
+@mixin material-box-depth-classes($name: elevation) {
+  @for $i from 1 through 24 {
+    .#{$name}-#{$i} {
+      box-shadow: 0 4px #{$i}px rgba(#000, 0.2);
+    }
+  }
+}
+
+// ボタンホバーアニメーション
+// transition:all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms

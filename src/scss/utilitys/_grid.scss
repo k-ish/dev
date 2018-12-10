@@ -1,0 +1,79 @@
+// grid system
+
+@if $create-grid-system {
+
+  // container
+  
+  .container {
+    width: $base-width;
+    padding: 0 ($grid-gutter-width / 2);
+    margin: 0 auto;
+    @each $key, $value in $breakpoints {
+      @media #{$value} {
+        width: map-get($container-width, $key);
+      }
+    }
+  }
+  .container-fluid {
+    width: 100%;
+    padding: 0 ($grid-gutter-width / 2);
+    margin: 0 auto;
+  }
+
+
+
+  // row
+
+  .row {
+    margin-right: ($grid-gutter-width / -2);
+    margin-left: ($grid-gutter-width / -2);
+  }
+  .row::after,
+  .row::before {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+
+
+  // column
+
+  %grid-column {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: 1px;
+    padding-right: ($grid-gutter-width / 2);
+    padding-left: ($grid-gutter-width / 2);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$i} {
+        @extend %grid-column;
+      }
+    }
+    @for $i from 1 through $grid-columns {
+      .col-#{$i}-#{$breakpoint} {
+        @extend %grid-column;
+      }
+    }
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      width: percentage($i/$grid-columns);
+    }
+  }
+
+  @each $key, $value in $bp-down {
+    @media #{$value} {
+      @for $i from 1 through $grid-columns {
+        .col-#{$i}-#{$key} {
+          width: percentage($i/$grid-columns);
+        }
+      }
+    }
+  }
+}

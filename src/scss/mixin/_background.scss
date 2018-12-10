@@ -1,0 +1,14 @@
+// background
+
+@mixin bg-fixed {
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+// @mixin background($color: null, $url, $repeat: no-repeat) {
+
+// }
+// div {
+//     background: #ccbb33 url(../images/JUN_Always_Be_Cool.jpg) no-repeat fixed
+//         left top;
+// }

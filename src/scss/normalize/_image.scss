@@ -1,0 +1,15 @@
+/* image */
+
+figure {
+  margin: 0 0 1rem;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+  vertical-align: middle;
+}
