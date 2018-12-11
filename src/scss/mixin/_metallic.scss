@@ -1,36 +1,36 @@
-// metallic ratio
+// ratio
 
-$ratio-gold: 1.618;
-$ratio-silver: 1.414;
-$ratio-platinum: 1.732;
-$ratio-bronze: 3.303;
-
+$gold: 1.618;
+$silver: 1.414;
+$platinum: 1.732;
+$bronze: 3.303;
+$thirds: 3;
 // width から計算
-@mixin metallic-by-width($width, $ratio: $ratio-gold) {
+@mixin ratio-w($width, $ratio: $gold) {
   width: $width;
   height: round($width / $ratio);
 }
 
 // height から計算
-@mixin metallic-by-height($height, $ratio: $ratio-gold) {
+@mixin ratio-h($height, $ratio: $gold) {
   width: round($height * $ratio);
   height: $height;
 }
 
 // width から計算（縦長）
-@mixin metallic-by-width-portrait($width, $ratio: $ratio-gold) {
+@mixin ratio-portrait-w($width, $ratio: $gold) {
   width: $width;
   height: round($width * $ratio);
 }
 
 // height から計算（縦長）
-@mixin metallic-by-height-portrait($height, $ratio: $ratio-gold) {
+@mixin ratio-portrait-h($height, $ratio: $gold) {
   width: round($height / $ratio);
   height: $height;
 }
 
 //横幅から分割
-@mixin metallic-two-col($base-width, $ratio: $ratio-gold) {
+@mixin ratio-two-col($base-width, $ratio: $gold) {
   $width: round($base-width / $ratio);
   width: $width;
   height: $width;
@@ -41,10 +41,9 @@ $ratio-bronze: 3.303;
 }
 
 
-
 // 黄金比を指定した数だけ分割
-@mixin create-metallic-gold($base-width, $boxes) {
-  $width: round($base-width / $ratio-gold);
+@mixin create-ratio-gold($base-width, $boxes) {
+  $width: round($base-width / $gold);
   $height: $width;
 
   @for $i from 1 through $boxes {
@@ -55,11 +54,11 @@ $ratio-bronze: 3.303;
         width: $width;
         height: $height;
       }
-      $width: round($width / $ratio-gold);
+      $width: round($width / $gold);
       $height: $width;
     } @else {
       // 最後のクラスのとき
-      $long: round($width * $ratio-gold);
+      $long: round($width * $gold);
       $short: $width;
       @if $i % 2==0 {
         // 最後のクラスが偶数のとき
