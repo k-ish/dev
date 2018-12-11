@@ -17,4 +17,28 @@
 
 
 
-// triangle
+// arrow
+// size:矢印のサイズ bd:矢印の太さ clr:色 pd:文字との予約
+@mixin arrow($size:6px, $bd:2px, $clr:#000, $pd:20px) {
+	position: relative;
+	padding-left: $pd;
+	list-style-type: none;
+	width: 300px;
+	margin: 0 auto;
+	font-size: 24px;
+	&::before {
+		content: "";
+		width: $size;
+		height: $size;
+		border: 0px;
+		border-top: solid $bd $clr;
+		border-right: solid $bd $clr;
+		-ms-transform: rotate(45deg);
+		-webkit-transform: rotate(45deg);
+		transform: rotate(45deg);
+		position: absolute;
+		top: 50%;
+		left: 0;
+		margin-top: $size / -4 * 2;
+	}
+}
