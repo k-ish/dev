@@ -23,9 +23,7 @@
 	position: relative;
 	padding-left: $pd;
 	list-style-type: none;
-	width: 300px;
 	margin: 0 auto;
-	font-size: 24px;
 	&::before {
 		content: "";
 		width: $size;
