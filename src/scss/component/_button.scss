@@ -1,75 +1,66 @@
-
-
-
 // ベース
-@mixin btn-block($pd: .5em 1.5em, $size:null) {
-  display: block;
-  padding: $pd;
-  border-radius:1.5em;
 
-}
-@mixin btn-strech($pd: .5em 1.5em) {
-  display: inline-block;
-  padding: $pd;
-  text-align: center;
+@mixin btn-block($pd: 0.5em 1.5em, $size: null) {
+	display: block;
+	padding: $pd;
 }
 
-.btn_type01 {
-  @include btn-block;
-  color:#ffffff;
-  background: #1B73BA;
-  margin-top: 10px;
-
+@mixin btn-strech($pd: 0.5em 1.5em) {
+	display: inline-block;
+	padding: $pd;
 }
-
-.btntest a{
-  width: 180px;
-  padding:15px;
-  color:#ffffff;
-  font-size: 15px;
-  line-height: 120%;
-  text-align: center;
-  text-decoration: none;
-  background: #1B73BA;
-  display: block;
-  position:relative;
-  border-radius: 24px;
-}
-.msr_btn12 a:hover{
-  opacity:0.7;
-}
-
 
 // ゴーストボタン
-@mixin btn-ghost($color, $boder-width, $radius:null ) {
-  color: $color;
-  border: $boder-width solid $color;
-  border-radius: $radius;
+@mixin btn-ghost($color, $boder-width, $radius: null) {
+	color: $color;
+	border: $boder-width solid $color;
+	border-radius: $radius;
 }
-
 
 // サイズ拡張
 @mixin btn-mod-size {
-  &-full {
-    width: 100%;
-  }
-  &-small {
-    width: 100%;
-  }
-  &-large {
-    width: 100%;
-  }
+	&-full {
+		width: 100%;
+	}
+	&-small {
+		width: 100%;
+	}
+	&-large {
+		width: 100%;
+	}
 }
 
 // ボタンリセット
 @mixin btn-reset {
-  border: 0;
-  padding: 0;
-  margin: 0;
-  background: transparent none;
-  font-size: inherit;
-  @each $list in $vendor-identifier-list {
-    #{$list}appearance: none;
-  }
-  appearance: none;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent none;
+	font-size: inherit;
+	@each $list in $vendor-identifier-list {
+		#{$list}appearance: none;
+	}
+	appearance: none;
+}
+
+//アニメーション
+@mixin hover-horizon($transform: 8px, $duration: 0.3s) {
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	-webkit-transition-duration: $duration;
+	transition-duration: $duration;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	&:hover,
+	&:focus,
+	&:active {
+		-webkit-transform: translateX($transform);
+		transform: translateX($transform);
+	}
+}
+.btntest {
+	@include btn-strech($pd: 1em 3em);
+	background-color: $red;
+	color: #fff;
+	@include hover-horizon(8px);
 }
