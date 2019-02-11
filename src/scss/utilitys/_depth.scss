@@ -1,0 +1,37 @@
+// 簡易版
+// ---------------------------------------------------
+@include mq-classes {
+  @each $key, $value in $map-box-shadow01 {
+    .depth-#{$key}#{$bp-infix} {
+      box-shadow: unquote($value) $im;
+    }
+  }
+}
+
+
+@import "../mixin/depth";
+
+@function mdc-elevation-transition-value(
+  $duration: $mdc-elevation-transition-duration,
+  $easing: $mdc-elevation-transition-timing-function
+) {
+  @return #{$mdc-elevation-property} #{$duration} #{$easing};
+
+}
+
+
+@for $z-value from 0 through 24 {
+  .mdc-depth-z#{$z-value} {
+    @include mdc-elevation($z-value);
+  }
+}
+// @for $z-value from 0 through 24 {
+//   .mdc-elevation--z#{$z-value} {
+//     @include mdc-elevation($z-value);
+//   }
+// }
+
+.mdc-elevation-transition {
+  transition: mdc-elevation-transition-value();
+  will-change: $mdc-elevation-property;
+}

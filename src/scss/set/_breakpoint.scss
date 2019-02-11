@@ -1,61 +1,47 @@
-@charset "utf-8";
+// メディアクエリの設定
+// ---------------------------------------------------
 
-// media query
-
-
-// mobile
+// モバイルファースト
 $bp-up: (
   'sm': 'screen and (min-width: 576px)',
   'md': 'screen and (min-width: 768px)',
   'lg': 'screen and (min-width: 992px)',
-  'xl': 'screen and (min-width: 1200px)',
+  'xl': 'screen and (min-width: 1200px)'
 ) !default;
 
-// pc
+// PCファースト
 $bp-down: (
-  'xl': 'screen and (max-width: 1200px)',
-  'lg': 'screen and (max-width: 992px)',
-  'md': 'screen and (max-width:768px)',
-  'sm': 'screen and (max-width: 576px)',
+  // 'xl': 'screen and (max-width: 1200px)',
+  // 'lg': 'screen and (max-width: 992px)',
+  'md': 'screen and (max-width: 768px)',
+  'sm': 'screen and (max-width: 576px)'
 ) !default;
 
-// 利用するBPを代入
+
+// 利用するブレークポイント（$bp-down または $bp-up）を代入
 $breakpoints: $bp-down;
 
-// media query for mobile
-@mixin mq-up($breakpoint: md) {
-  @media #{map-get($bp-up, $breakpoint)} {
-    @content;
-  }
-}
-// media query for pc
-@mixin mq-down($breakpoint: md) {
-  @media #{map-get($bp-down, $breakpoint)} {
+
+// mixin モバイルファースト用
+// ---------------------------------------------------
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
 }
 
-// make media query classes
-@mixin mq-all {
-    @each $value in map-values($breakpoints) {
-        @media #{$value} {
-            @content;
-        }
-    }
-}
 
+// mixin 汎用クラス生成用
+// ---------------------------------------------------
 
-
-//汎用クラス生成用(仮)　プレフィックス付き
-
-$mq-none: (   //クラス名に付けることでメディアクエリの識別子を付与
+$mq-none: (
   'none':'0'
 );
-
 $for-mq-classes: (
   map-merge($mq-none, $breakpoints)
 );
 
+//クラス名に付けることでメディアクエリの識別子を付与
 $bp-infix: "" !default;
 
 @mixin mq-classes {

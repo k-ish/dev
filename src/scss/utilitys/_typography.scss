@@ -1,0 +1,38 @@
+
+@include mq-classes {
+  // サイズ
+	@each $key, $value in $map-font-size {
+		.fo-#{$key}#{$bp-infix} {
+			font-size: #{$value}px $im;
+    }
+	}
+
+
+	// ウェイト
+	@each $key, $value in $map-font-weight {
+		.fo-#{$key}#{$bp-infix} {
+			font-weight: $value $im;
+    }
+	}
+
+	// ウェイト（キーワード）
+  @each $key, $value in $map-font-weight-keyword {
+    .fo-#{$key}#{$bp-infix} {
+      font-weight: $value $im;
+    }
+	}
+
+	// 組方向
+  @each $key, $value in $map-text-align {
+    .ta-#{$key}#{$bp-infix} {
+      text-align: $value $im;
+    }
+	}
+
+	// 行内位置
+  @each $key, $value in $map-vertical-align {
+    .va-#{$key}#{$bp-infix} {
+      vertical-align: $value $im;
+    }
+	}
+}

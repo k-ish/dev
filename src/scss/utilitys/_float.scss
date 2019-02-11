@@ -1,18 +1,8 @@
-// float
 
-@if $create-float {
-  @each $name, $float in $float-list {
-    .float-#{$name} {
-      float: $float $im;
-    }
-  }
-  @each $key, $value in $bp-down {
-    @media #{$value} {
-      @each $name, $float in $float-list {
-        .float-#{$name}-#{$key} {
-          float: $float $im;
-        }
-      }
+@include mq-classes {
+  @each $key, $value in $map-float {
+    .float-#{$key}#{$bp-infix} {
+      float: $value $im;
     }
   }
 }

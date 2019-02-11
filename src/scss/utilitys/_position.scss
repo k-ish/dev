@@ -1,18 +1,7 @@
-// position
-
-@if $create-position {
-  @each $name, $position in $position-list {
-    .pos-#{$name} {
-      position: $position $im;
-    }
-  }
-  @each $key, $value in $bp-down {
-    @media #{$value} {
-      @each $name, $position in $position-list {
-        .pos-#{$name}-#{$key} {
-          position: $position $im;
-        }
-      }
+@include mq-classes {
+  @each $key, $value in $map-position {
+    .pos-#{$key}#{$bp-infix} {
+      position: $value $im;
     }
   }
 }

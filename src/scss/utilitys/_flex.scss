@@ -1,137 +1,65 @@
-// flex-direction
+@include mq-classes {
 
-@if $create-flex-direction {
-  @include mq-classes {
-    @each $name, $value in $flex-direction {
-      .f-direction-#{$name}#{$bp-infix} {
-        flex-direction: $value;
-      }
-    }
-  }
-}
+	// flex-direction
+	@each $key, $value in $map-flex-direction {
+		.fx-#{$key}#{$bp-infix} {
+			flex-direction: $value $im;
+		}
+	}
 
+	// flex-wrap
+	@each $key, $value in $map-flex-wrap {
+		.fx-#{$key}#{$bp-infix} {
+			flex-wrap: $value $im;
+		}
+	}
 
+	// justify-content
+	@each $key, $value in $map-justify-content {
+		.fx-justify-#{$key}#{$bp-infix} {
+			justify-content: $value $im;
+		}
+	}
 
-// flex-wrap
+	// align-items
+	@each $key, $value in $map-align-items {
+		.fx-align-items-#{$key}#{$bp-infix} {
+			align-items: $value $im;
+		}
+	}
 
-@if $create-flex-wrap {
-  @include mq-classes {
-    @each $name, $value in $flex-wrap {
-      .f-#{$name}#{$bp-infix} {
-        flex-wrap: $value;
-      }
-    }
-  }
-}
+	// align-content
+	@each $key, $value in $map-align-content {
+		.fx-align-content-#{$key}#{$bp-infix} {
+			align-content: $value $im;
+		}
+	}
 
+	// align-self
+	@each $key, $value in $map-align-self {
+		.fx-align-self-#{$key}#{$bp-infix} {
+			align-self: $value $im;
+		}
+	}
 
+	// order
+	@for $i from 1 through $order-end-value {
+		.fx-order-#{$i}#{$bp-infix} {
+			order: $i;
+		}
+	}
 
-// flex-wrap
+	// flex-grow
+	@for $i from 1 through $grow-end-value {
+		.fx-grow-#{$i}#{$bp-infix} {
+			flex-grow: $i;
+		}
+	}
 
-@if $create-flex-wrap {
-  @include mq-classes {
-    @each $name, $value in $flex-wrap {
-      .f-#{$name}#{$bp-infix} {
-        flex-wrap: $value;
-      }
-    }
-  }
-}
-
-
-
-// justify-content
-
-@if $create-justify-content {
-  @include mq-classes {
-    @each $name, $value in $justify-content {
-      .f-row-align-#{$name}#{$bp-infix} {
-        justify-content: $value;
-      }
-    }
-  }
-}
-
-
-
-// align-items
-
-@if $create-align-items {
-  @include mq-classes {
-    @each $name, $value in $align-items {
-      .f-v-items-#{$name}#{$bp-infix} {
-        align-items: $value;
-      }
-    }
-  }
-}
-
-
-
-// align-content
-
-@if $create-align-content {
-  @include mq-classes {
-    @each $name, $value in $align-content {
-      .f-v-content-#{$name}#{$bp-infix} {
-        align-content: $value;
-      }
-    }
-  }
-}
-
-
-
-// order
-
-@if $create-flex-order {
-  @include mq-classes {
-    @for $i from 1 through $order-end-value {
-      .f-order-#{$i}#{$bp-infix} {
-        order: $i;
-      }
-    }
-  }
-}
-
-
-
-// flex-grow
-
-@if $create-flex-grow {
-  @include mq-classes {
-    @for $i from 1 through $grow-end-value {
-      .f-grow-#{$i}#{$bp-infix} {
-        flex-grow: $i;
-      }
-    }
-  }
-}
-
-
-
-// flex-shrink
-
-@if $create-flex-shrink {
-  @include mq-classes {
-    @for $i from 1 through $shrink-end-value {
-      .shrink-#{$i}#{$bp-infix} {
-        flex-shrink: $i;
-      }
-    }
-  }
-}
-
-
-
-// align-self
-
-@if $create-align-self {
-  @include mq-classes {
-    @each $name, $value in $align-self {
-      .f-v-self-#{$name}#{$bp-infix} {
-        align-self: $value;
-      }
-    }
-  }
+	// flex-shrink
+	@for $i from 1 through $shrink-end-value {
+		.fx-shrink-#{$i}#{$bp-infix} {
+			flex-shrink: $i;
+		}
+	}
 }

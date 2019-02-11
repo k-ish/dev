@@ -1,19 +1,8 @@
-// display
 
-@if $create-display {
-  @each $name, $display in $display-list {
-    .display-#{$name} {
-      display: $display $im;
-    }
-  }
-  @each $key, $value in $bp-down {
-    @media #{$value} {
-      @each $name, $display in $display-list {
-        .display-#{$name}-#{$key} {
-          display: $display $im;
-        }
-      }
+@include mq-classes {
+  @each $key, $value in $map-display {
+    .d-#{$key}#{$bp-infix} {
+      display: $value $im;
     }
   }
 }
-

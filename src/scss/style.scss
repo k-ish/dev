@@ -1,2 +1,11 @@
 @charset "utf-8";
 @import "import";
+
+.test {
+	@include mdc-elevation(1);
+	transition: mdc-animation-standard();
+	@include hover {
+		@include mdc-elevation(3);
+
+	}
+}

@@ -6,7 +6,7 @@
 @import "set/functions";
 @import "set/breakpoint";
 @import "set/switch";
-@import "set/frameworks/mdc/elevation/mdc-elevation";
+// @import "set/frameworks/mdc/elevation/mdc-elevation";
 // normalize
 // @import "normalize/normalize";
 // @import "normalize/typography";
@@ -16,6 +16,7 @@
 
 
 // mixin
+@import "mixin/hover";
 @import "mixin/clearfix";
 @import "mixin/position";
 @import "mixin/shape";
@@ -24,6 +25,7 @@
 @import "mixin/depth";
 @import "mixin/text";
 @import "mixin/gradient";
+@import "mixin/depth";
 @import "mixin/border";
 @import "mixin/rhythm";
 @import "mixin/background";
@@ -43,11 +45,12 @@
 
 
 // utility
-@import "utilitys/grid";
-@import "utilitys/space";
-@import "utilitys/context";
-@import "utilitys/background";
-@import "utilitys/display";
-@import "utilitys/position";
-@import "utilitys/float";
-@import "utilitys/flex";
+// @import "utilitys/grid";
+// @import "utilitys/space";
+// @import "utilitys/typography";
+// @import "utilitys/background";
+// @import "utilitys/depth";
+// @import "utilitys/display";
+// @import "utilitys/position";
+// @import "utilitys/float";
+// @import "utilitys/flex";
