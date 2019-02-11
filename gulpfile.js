@@ -16,7 +16,7 @@ const imageminPng = require("imagemin-pngquant");
 const imageminGif = require("imagemin-gifsicle");
 const changed = require('gulp-changed');
 
-// npm i -D gulp gulp-sass gulp-postcss autoprefixer gulp-group-css-media-queries gulp-pug gulp-plumber gulp-rename
+// npm i -D gulp@3.9.0 gulp-sass gulp-postcss autoprefixer css-mqpacker gulp-pug gulp-plumber gulp-rename gulp-imagemin imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-changed
 // gulp.task(“タスク名”,function() {});でタスクの登録をおこないます。
 // gulp.src(“MiniMatchパターン”)で読み出したいファイルを指定します。
 // pipe(行いたい処理)でsrcで取得したファイルに処理を施します
@@ -31,11 +31,11 @@ var basedir = "DIST/";   // ルートディレクトリを指定
 var dir = basedir;
 
 // jpg,png,gif画像の圧縮タスク
+var paths = {
+	srcDir: 'src',
+	dstDir: dir
+}
 gulp.task('imagemin', function () {
-	var paths = {
-		srcDir: 'src',
-		dstDir: dir
-	}
 	var srcGlob = paths.srcDir + '/**/*.+(jpg|jpeg|png|gif)';
 	var dstGlob = paths.dstDir;
 	gulp.src(srcGlob)
@@ -71,7 +71,7 @@ gulp.task("sass", function () {
 		mqpacker()
 	];
 
-	gulp.src(["./src/**/*.scss", "!./src/_copythis/**/*", "!./src/_partial/**/*"])
+	gulp.src(["./src/**/*.scss", "!./src/_*/**/*"])
 		.pipe(sass({ outputStyle: "expanded" })) // sassコンパイル
 		.on("error", sass.logError) // 監視中のエラーによる強制停止を回避
 		.pipe(postcss(plugins))	// 設定したpost-cssを実行
@@ -81,7 +81,7 @@ gulp.task("sass", function () {
 
 // pug コンパイル
 gulp.task("pug", function () {
-	gulp.src(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_copythis/**/*", "!./src/_partial/**/*"])
+	gulp.src(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_*/**/*"])
 		.pipe(plumber()) // 監視中のエラーによる強制停止を回避
 		.pipe(
 			pug({
@@ -91,40 +91,27 @@ gulp.task("pug", function () {
 		.pipe(gulp.dest(dir));
 });
 
-// html コピー
-gulp.task("html", function () {
-	gulp.src(["./src/**/*.html", "!./src/_copythis/**/*", "!./src/_partial/**/*"])
+
+// コピー
+gulp.task("copy", function () {
+	gulp.src(["./src/**/*.+(html|css|js|pdf)", "!./src/_*/**/*"])
 		.pipe(gulp.dest(dir));
 });
 
 
-// css コピー
-gulp.task("css", function () {
-	gulp.src(["./src/**/*.css", "!./src/_copythis/**/*", "!./src/_partial/**/*"])
-		.pipe(gulp.dest(dir));
-});
-
-
-// js コピー
-gulp.task("js", function () {
-	gulp.src(["./src/**/*.js", "!./src/**/_*.js", "!./src/_copythis/**/*", "!./src/_partial/**/*"])
-		.pipe(gulp.dest(dir));
-});
 
 
 // 監視
 gulp.task("default", function () {
-	gulp.watch(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["pug"]);
-	gulp.watch(["./src/**/*.scss", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["sass"]);
-	gulp.watch(["./src/**/*.html", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["html"]);
-	gulp.watch(["./src/**/*.css", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["css"]);
-	gulp.watch(["./src/**/*.js", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["js"]);
-	gulp.watch(["./src/**/*.js", "!./src/**/_*.js", "!./src/_copythis/**/*", "!./src/_partial/**/*"], ["js"]);
+	gulp.watch(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_*/**/*"]);
+	gulp.watch(["./src/**/*.scss", "!./src/_*/**/*"], ["sass"]);
+	gulp.watch(["./src/**/*.+(html|css|js|pdf)", "!./src/_*/**/*"], ["copy"]);
+	gulp.watch("srcGlob", ["imagemin"]);
 });
 
 
 // 初回実行
-gulp.task("build", ['sass', 'pug', 'html', 'css', 'js', 'imagemin']);
+gulp.task("build", ['sass', 'pug', 'copy', 'imagemin']);
 
 
 
