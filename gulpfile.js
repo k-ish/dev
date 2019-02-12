@@ -16,7 +16,7 @@ const imageminPng = require("imagemin-pngquant");
 const imageminGif = require("imagemin-gifsicle");
 const changed = require('gulp-changed');
 
-// npm i -D gulp@3.9.0 gulp-sass gulp-postcss autoprefixer css-mqpacker gulp-pug gulp-plumber gulp-rename gulp-imagemin imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-changed
+// npm i -D gulp@3.9.0 gulp-sass gulp-postcss css-mqpacker autoprefixer gulp-pug gulp-plumber gulp-rename gulp-imagemin imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle gulp-changed
 // gulp.task(“タスク名”,function() {});でタスクの登録をおこないます。
 // gulp.src(“MiniMatchパターン”)で読み出したいファイルを指定します。
 // pipe(行いたい処理)でsrcで取得したファイルに処理を施します
@@ -103,7 +103,7 @@ gulp.task("copy", function () {
 
 // 監視
 gulp.task("default", function () {
-	gulp.watch(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_*/**/*"]);
+	gulp.watch(["./src/**/*.pug", "!src/**/_*.pug", "!./src/_*/**/*"], ["pug"]);
 	gulp.watch(["./src/**/*.scss", "!./src/_*/**/*"], ["sass"]);
 	gulp.watch(["./src/**/*.+(html|css|js|pdf)", "!./src/_*/**/*"], ["copy"]);
 	gulp.watch("srcGlob", ["imagemin"]);

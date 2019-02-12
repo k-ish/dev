@@ -1,15 +1,14 @@
 // 簡易版
 // ---------------------------------------------------
-@include mq-classes {
   @each $key, $value in $map-box-shadow01 {
-    .depth-#{$key}#{$bp-infix} {
+    .depth-z#{$key} {
       box-shadow: unquote($value) $im;
     }
   }
-}
 
 
-@import "../mixin/depth";
+
+// @import "../mixin/depth";
 
 @function mdc-elevation-transition-value(
   $duration: $mdc-elevation-transition-duration,
@@ -21,7 +20,7 @@
 
 
 @for $z-value from 0 through 24 {
-  .mdc-depth-z#{$z-value} {
+  .mdc-elevation-z#{$z-value} {
     @include mdc-elevation($z-value);
   }
 }

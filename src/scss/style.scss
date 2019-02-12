@@ -9,3 +9,19 @@
 
 	}
 }
+
+@each $key, $value in $grays {
+	.bgc-gray-#{$key}{
+		 background-color:$value;
+		}
+}
+@each $key, $value in $grays {
+	.gray-#{$key}{
+		 color:$value;
+		}
+}
+.btn01 {
+	padding: 0.5em 2em;
+	// font-weight: bold;
+	font-size: 14px;
+}
