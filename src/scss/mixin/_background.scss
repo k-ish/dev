@@ -1,14 +1,17 @@
-// background
+
+// パララックス
+
 
 @mixin bg-fixed {
-    background-attachment: fixed;
-    background-size: cover;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
-// @mixin background($color: null, $url, $repeat: no-repeat) {
 
-// }
-// div {
-//     background: #ccbb33 url(../images/JUN_Always_Be_Cool.jpg) no-repeat fixed
-//         left top;
-// }
+// ストライプ
+
+@mixin bg-stripe($thinClr: white, $thickClr: blue, $thinWidth: 4px, $thickWidth: 6px, $deg: -45deg) {
+	background-image: repeating-linear-gradient($deg, $thinClr, $thinClr $thinWidth, $thickClr $thinWidth, $thickClr #{$thinWidth + $thickWidth});
+}
+// repeating-linear-gradient (-45deg, white, white 5px, green 5px, green 10px)
+// repeating-linear-gradient(ストライプの角度, 色1 始点, 色1 終点, 色2 始点、色2 終点[, 色3 始点, 色3 終点, …])

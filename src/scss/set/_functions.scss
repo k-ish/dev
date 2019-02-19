@@ -20,7 +20,7 @@
 
 
 
-// アニメーショ
+// アニメーション
 // ---------------------------------------------------
 @function mdc-animation-enter($name: all, $duration: 175ms, $delay: 0ms) {
   @return $name $duration $delay $mdc-animation-deceleration-curve-timing-function;
