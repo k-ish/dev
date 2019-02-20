@@ -1,0 +1,31 @@
+
+.box {
+	width: 800px;
+	position: relative;
+	padding: 1em;
+
+	&-colorRed {
+		background-color: $p6;
+		border: 1px solid red;
+	}
+	&-outline {
+		border: 2px solid $v6;
+	}
+
+	&-overlay {
+		border: solid 3px $pp6;
+		border-radius: 5px;
+		margin-top: 200px;
+		&_title {
+			position: absolute;
+			display: inline-block;
+			top: -1.5em;
+			left: 10px;
+			padding: 0 9px;
+			line-height: 1;
+			background: #fff;
+			color: $v6;
+			font-weight: bold;
+		}
+	}
+}
