@@ -1,0 +1,24 @@
+$panel-block: "panel";
+$panel-padding: .75em;
+$panel-border-radius: 4px;
+
+.panel {
+	border-radius: $panel-border-radius;
+	width: 400px;
+
+	&_head {
+		padding:$panel-padding;
+	}
+	&_body {
+		padding:$panel-padding;
+	}
+
+	&-blue {
+		border: 1px solid $v16;
+		> .#{$panel-block}_head {
+			background-color: $v16;
+			color:#fff;
+		}
+	}
+
+}

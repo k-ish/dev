@@ -2,67 +2,69 @@
 // bootstrap color system
 // ---------------------------------------------------
 
-$white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
-$black:    #000 !default;
+$bootstrap-color-white:    #fff !default;
+$bootstrap-color-gray-100: #f8f9fa !default;
+$bootstrap-color-gray-200: #e9ecef !default;
+$bootstrap-color-gray-300: #dee2e6 !default;
+$bootstrap-color-gray-400: #ced4da !default;
+$bootstrap-color-gray-500: #adb5bd !default;
+$bootstrap-color-gray-600: #6c757d !default;
+$bootstrap-color-gray-700: #495057 !default;
+$bootstrap-color-gray-800: #343a40 !default;
+$bootstrap-color-gray-900: #212529 !default;
+$bootstrap-color-black:    #000 !default;
 
-$grays: () !default;
-$grays: map-merge((
-  "100": $gray-100,
-  "200": $gray-200,
-  "300": $gray-300,
-  "400": $gray-400,
-  "500": $gray-500,
-  "600": $gray-600,
-  "700": $gray-700,
-  "800": $gray-800,
-  "900": $gray-900
-), $grays);
+$bootstrap-color-grays: () !default;
+$bootstrap-color-grays: map-merge((
+  "100": $bootstrap-color-gray-100,
+  "200": $bootstrap-color-gray-200,
+  "300": $bootstrap-color-gray-300,
+  "400": $bootstrap-color-gray-400,
+  "500": $bootstrap-color-gray-500,
+  "600": $bootstrap-color-gray-600,
+  "700": $bootstrap-color-gray-700,
+  "800": $bootstrap-color-gray-800,
+  "900": $bootstrap-color-gray-900
+), $bootstrap-color-grays);
 
-$blue:    #007bff !default;
-$indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
-$pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
-$teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
 
-$colors: () !default;
-$colors: map-merge((
-  "blue":       $blue,
-  "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
-  "red":        $red,
-  "orange":     $orange,
-  "yellow":     $yellow,
-  "green":      $green,
-  "teal":       $teal,
-  "cyan":       $cyan,
-  "white":      $white,
-  "gray":       $gray-600,
-  "gray-dark":  $gray-800
-), $colors);
+$bootstrap-color-blue:    #007bff !default;
+$bootstrap-color-indigo:  #6610f2 !default;
+$bootstrap-color-purple:  #6f42c1 !default;
+$bootstrap-color-pink:    #e83e8c !default;
+$bootstrap-color-red:     #dc3545 !default;
+$bootstrap-color-orange:  #fd7e14 !default;
+$bootstrap-color-yellow:  #ffc107 !default;
+$bootstrap-color-green:   #28a745 !default;
+$bootstrap-color-teal:    #20c997 !default;
+$bootstrap-color-cyan:    #17a2b8 !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
-$success:       $green !default;
-$info:          $cyan !default;
-$warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
-$dark:          $gray-800 !default;
+
+$bootstrap-color-colors: () !default;
+$bootstrap-color-colors: map-merge((
+  "blue":       $bootstrap-color-blue,
+  "indigo":     $bootstrap-color-indigo,
+  "purple":     $bootstrap-color-purple,
+  "pink":       $bootstrap-color-pink,
+  "red":        $bootstrap-color-red,
+  "orange":     $bootstrap-color-orange,
+  "yellow":     $bootstrap-color-yellow,
+  "green":      $bootstrap-color-green,
+  "teal":       $bootstrap-color-teal,
+  "cyan":       $bootstrap-color-cyan,
+  "white":      $bootstrap-color-white,
+  "gray":       $bootstrap-color-gray-600,
+  "gray-dark":  $bootstrap-color-gray-800
+), $bootstrap-color-colors);
+
+$primary:       $bootstrap-color-blue !default;
+$secondary:     $bootstrap-color-gray-600 !default;
+$success:       $bootstrap-color-green !default;
+$info:          $bootstrap-color-cyan !default;
+$warning:       $bootstrap-color-yellow !default;
+$danger:        $bootstrap-color-red !default;
+$light:         $bootstrap-color-gray-100 !default;
+$dark:          $bootstrap-color-gray-800 !default;
 
 $theme-colors: () !default;
 $theme-colors: map-merge((
@@ -655,3 +657,79 @@ $triad-03: adjust-hue($base-color, -140deg) !default;
 $split-01: $base-color !default;
 $split-02: adjust-hue(complement($base-color), 10deg) !default;
 $split-03: adjust-hue(complement($base-color), -10deg) !default;
+
+
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+), $theme-colors);
