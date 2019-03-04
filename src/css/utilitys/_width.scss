@@ -1,0 +1,8 @@
+
+@include mq-classes {
+	@for $i from 0 through $widthEndValue {
+		.w#{$i * $spaceTimes}per#{$bp-infix} {
+			width: #{$i * $spaceTimes}px #{$width-has-important};
+		}
+	}
+}

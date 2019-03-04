@@ -4,10 +4,15 @@ $panel-border-radius: 4px;
 
 .panel {
 	border-radius: $panel-border-radius;
-	width: 400px;
-
+	border: 1px solid $p4;
+	&-horizon {
+		display: flex;
+		flex-flow: row wrap;
+	}
 	&_head {
 		padding:$panel-padding;
+		color: $d4;
+		background-color: $p4;
 	}
 	&_body {
 		padding:$panel-padding;

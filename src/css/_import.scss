@@ -4,7 +4,7 @@
 @import "set/variables";
 @import "set/functions";
 @import "set/breakpoint";
-@import "set/switch";
+// @import "set/switch";
 
 // @import "normalize/normalize";
 // @import "normalize/image";
@@ -14,28 +14,27 @@
 
 
 // mixin
-@import "mixin/hover";
-@import "mixin/clearfix";
-@import "mixin/position";
-@import "mixin/shape";
-@import "mixin/metallic";
-@import "mixin/flexbox";
-@import "mixin/depth";
-@import "mixin/text";
-@import "mixin/gradient";
-@import "mixin/depth";
-@import "mixin/border";
-@import "mixin/rhythm";
 @import "mixin/background";
+@import "mixin/border";
+@import "mixin/clearfix";
+@import "mixin/depth";
+@import "mixin/flexbox";
 @import "mixin/form";
-
-
+@import "mixin/gradient";
+@import "mixin/hover";
+@import "mixin/metallic";
+@import "mixin/position";
+@import "mixin/rhythm";
+@import "mixin/shape";
+@import "mixin/text";
 // @import "mixin/guide";
+
+
 
 // component
 @import "component/button";
 // @import "component/box";
-@import "component/panel";
+// @import "component/panel";
 @import "component/card";
 @import "component/heading";
 @import "component/media";
@@ -55,3 +54,4 @@
 // @import "utilitys/position";
 // @import "utilitys/float";
 // @import "utilitys/flex";
+@import "utilitys/width";
