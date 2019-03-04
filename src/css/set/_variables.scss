@@ -1,5 +1,5 @@
 
-// normalize
+// ノーマライズ
 // ---------------------------------------------------
 
 $font-family-sans-serif:      "游ゴシック", YuGothic, Yu Gothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif !default;
@@ -68,13 +68,33 @@ $im: !important;
 
 
 
+// パネル
 // ---------------------------------------------------
-// grid system
+
+
+$panel-block: "panel";
+$panel-padding: .75em;
+$panel-border-radius: 4px;
+
+
+
+// ボックス
+// ---------------------------------------------------
+
+
+$box-block: "box";
+$box-padding: .75em;
+$box-border-radius: 4px;
+
+
+
+
+// グリッドシステム
 // ---------------------------------------------------
 
 
 // grid
-// ---------------------------------------------------
+
 $base-width: 1280px;
 $grid-gutter-width: 30px;
 $grid-columns: 12;
@@ -86,8 +106,21 @@ $container-width: (
 );
 
 
+
+
+// パネル
+
+
+
+
+
+// ---------------------------------------------------
+// 汎用クラス
+// ---------------------------------------------------
+
 // spacer
 // ---------------------------------------------------
+
 $infix-margin: m;
 $infix-padding: p;
 $infix-top: t-;
@@ -98,19 +131,22 @@ $spacing-has-important: "!important";
 $spaceEndValue: 10 !default;  //繰り返し数
 $spaceTimes: 5 !default;   //増値
 
+
+
+
 // width
 // ---------------------------------------------------
+
 $widthEndValue: 20 !default;  //繰り返し数
 $widthTimes: 5 !default;   //増値
 $width-has-important: "!important";
 
-// ---------------------------------------------------
-// 汎用クラス用マップ・変数
-// ---------------------------------------------------
+
 
 
 // タイポグラフィ
 // ---------------------------------------------------
+
 $map-font-size: (
   12: 12,
   14: 14,
@@ -160,8 +196,11 @@ $map-vertical-align: (
 ) !default;
 
 
+
+
 // ボックス関連
 // ---------------------------------------------------
+
 $map-position: (
   statick: static,
   relative: relative,
@@ -186,81 +225,9 @@ $map-display: (
 ) !default;
 
 
-// フレックスボックス
-// ---------------------------------------------------
 
-// 子要素の配置方向
-$map-flex-direction: (
-  row: row,   // 初期値。左から右
-  row-reverse: row-reverse,    // 右から左
-  column :column,    //上から下
-  column-reverse: column-reverse    //下から上
-);
-
-// 子要素の折返し
-$map-flex-wrap: (
-  nowrap: nowrap,   // 初期値。折返しなし
-  wrap: wrap,    // 上から下に折返し
-  wrap-reverse: wrap-reverse   // 下から上に折返し
-);
-
-// 親要素の空きスペースに対する水平方向揃え
-$map-justify-content: (
-  start: flex-start,   // 初期値。左揃え
-  end :flex-end,   // 右揃え
-  center :center,   // 中央揃え
-  between :space-between,   // 両端揃え
-  around: space-around,   // 均等割付
-  evenly: space-evenly   // 均等割付
-);
-
-//------------------------------------------------------------------
-//  「flex-start」と「flex-end」はRTL（Right To Left ＝ 右から左）
-// のときは逆向きに配置される
-//------------------------------------------------------------------//
-
-// 親要素の空きスペースに対する垂直方向揃え
-
-$map-align-items: (
-  stretch: stretch,   // 初期値。親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
-  start: flex-start,   // 上揃え
-  end :flex-end,   // 下揃え
-  center :center,     // 中央揃え
-  baseline :baseline    // ベースラインに揃える
-);
-
-// 複数行になったときの揃え
-$map-align-content: (
-  stretch: stretch,   // 初期値。親要素の高さに合わせて拡張
-  start: flex-start,   // 初期値。上揃え
-  end :flex-end,   // 下揃え
-  center :center,   // 中央揃え
-  between :space-between,   // 上下両端揃え
-  around: space-around   // 上下均等割付
-);
-//------------------------------------------------------------------//
-//「flex-wrap: nowrap;」の指定があるときは無効
-//------------------------------------------------------------------//
-
-// 子要素関連
-$map-align-self: (
-  auto: auto,   // 初期値。親要素のalign-items の値を継承
-  stretch: stretch,   // 親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
-  start: flex-start,   // 上揃え
-  end :flex-end,   // 下揃え
-  center :center,     // 中央揃え
-  baseline :baseline    // ベースラインに揃える
-);
-
-$order-end-value: 4;
-$grow-end-value: 4;
-$shrink-end-value: 4;
-
-
-
-//------------------------------------------------------------------//
 // アニメーション
-//------------------------------------------------------------------//
+// ---------------------------------------------------
 
 $mdc-animation-deceleration-curve-timing-function: cubic-bezier(0, 0, .2, 1) !default;
 $mdc-animation-standard-curve-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
@@ -271,12 +238,12 @@ $mdc-animation-sharp-curve-timing-function: cubic-bezier(.4, 0, .6, 1) !default;
 
 
 
-//------------------------------------------------------------------//
+
 // 影
-//------------------------------------------------------------------//
+// ---------------------------------------------------
 
 // 簡易版
-// ---------------------------------------------------
+
 $map-box-shadow01: (
   "0": "none",
   "1": "rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px",
@@ -288,7 +255,7 @@ $map-box-shadow01: (
 
 
 // 24段階
-// ---------------------------------------------------
+
 $mdc-elevation-baseline-color: black !default;  // 影の色
 $mdc-elevation-umbra-opacity: .2 !default;
 $mdc-elevation-penumbra-opacity: .14 !default;
@@ -381,3 +348,76 @@ $mdc-elevation-ambient-map: (
 $mdc-elevation-property: box-shadow !default;
 $mdc-elevation-transition-duration: 280ms !default;
 $mdc-elevation-transition-timing-function: $mdc-animation-standard-curve-timing-function !default;
+
+
+
+
+// フレックスボックス
+// ---------------------------------------------------
+
+// 子要素の配置方向
+$map-flex-direction: (
+  row: row,   // 初期値。左から右
+  row-reverse: row-reverse,    // 右から左
+  column :column,    //上から下
+  column-reverse: column-reverse    //下から上
+);
+
+// 子要素の折返し
+$map-flex-wrap: (
+  nowrap: nowrap,   // 初期値。折返しなし
+  wrap: wrap,    // 上から下に折返し
+  wrap-reverse: wrap-reverse   // 下から上に折返し
+);
+
+// 親要素の空きスペースに対する水平方向揃え
+$map-justify-content: (
+  start: flex-start,   // 初期値。左揃え
+  end :flex-end,   // 右揃え
+  center :center,   // 中央揃え
+  between :space-between,   // 両端揃え
+  around: space-around,   // 均等割付
+  evenly: space-evenly   // 均等割付
+);
+
+//------------------------------------------------------------------
+//  「flex-start」と「flex-end」はRTL（Right To Left ＝ 右から左）
+// のときは逆向きに配置される
+//------------------------------------------------------------------//
+
+// 親要素の空きスペースに対する垂直方向揃え
+
+$map-align-items: (
+  stretch: stretch,   // 初期値。親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
+  start: flex-start,   // 上揃え
+  end :flex-end,   // 下揃え
+  center :center,     // 中央揃え
+  baseline :baseline    // ベースラインに揃える
+);
+
+// 複数行になったときの揃え
+$map-align-content: (
+  stretch: stretch,   // 初期値。親要素の高さに合わせて拡張
+  start: flex-start,   // 初期値。上揃え
+  end :flex-end,   // 下揃え
+  center :center,   // 中央揃え
+  between :space-between,   // 上下両端揃え
+  around: space-around   // 上下均等割付
+);
+//------------------------------------------------------------------//
+//「flex-wrap: nowrap;」の指定があるときは無効
+//------------------------------------------------------------------//
+
+// 子要素関連
+$map-align-self: (
+  auto: auto,   // 初期値。親要素のalign-items の値を継承
+  stretch: stretch,   // 親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
+  start: flex-start,   // 上揃え
+  end :flex-end,   // 下揃え
+  center :center,     // 中央揃え
+  baseline :baseline    // ベースラインに揃える
+);
+
+$order-end-value: 4;
+$grow-end-value: 4;
+$shrink-end-value: 4;

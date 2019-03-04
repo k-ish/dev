@@ -1,9 +1,9 @@
 
 // setting
 @import "set/color";
+@import "set/breakpoint";
 @import "set/variables";
 @import "set/functions";
-@import "set/breakpoint";
 // @import "set/switch";
 
 // @import "normalize/normalize";
@@ -32,26 +32,25 @@
 
 
 // component
+// @import "component/grid";
 @import "component/button";
-// @import "component/box";
-// @import "component/panel";
+@import "component/box";
+@import "component/panel";
 @import "component/card";
 @import "component/heading";
 @import "component/media";
 @import "component/list";
 @import "component/dl";
-@import "component/frame";
 
 
 
 // utility
-// @import "utilitys/grid";
-// @import "utilitys/space";
 // @import "utilitys/typography";
+// @import "utilitys/space";
 // @import "utilitys/background";
 // @import "utilitys/depth";
 // @import "utilitys/display";
 // @import "utilitys/position";
 // @import "utilitys/float";
 // @import "utilitys/flex";
-@import "utilitys/width";
+// @import "utilitys/width";
