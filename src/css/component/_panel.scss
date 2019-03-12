@@ -1,31 +1,40 @@
-.panel {
-	border-radius: $panel-border-radius;
-	border: 1px solid $p4;
-	&_head {
-		padding:$panel-padding;
-		color: $d4;
-		background-color: $p4;
-	}
-	&_body {
-		padding:$panel-padding;
+@mixin panel($class: panel, $padding: 1em, $border-radius: 4px) {
+
+	.#{$class} {
+		border-radius: $border-radius;
+		border: 1px solid $primary;
 	}
 
-	&-blue {
-		border: 1px solid $v16;
-		> .#{$panel-block}_head {
-			background-color: $v16;
-			color:#fff;
-		}
-	}
-	&-horizon {
+	.#{$class}-horizon {
 		display: flex;
 		flex-flow: row wrap;
 	}
-	&-round {
-		border-radius: $panel-border-radius;
-	}
-	&-shadow {
-		@include mdc-elevation(1);
+
+	.#{$class}_head {
+		color: tint($primary, 90);
+		padding: $padding;
+		background-color: $primary;
 	}
 
+	.#{$class}_body {
+		padding: $padding;
+	}
+
+	.#{$class}-blue {
+		border: 1px solid $v16;
+		> .#{$class}_head {
+			background-color: $v16;
+			color: #fff;
+		}
+	}
+
+	.#{$class}-round {
+		border-radius: $border-radius;
+	}
+
+	.#{$class}-shadow {
+		@include mdc-elevation(1);
+	}
 }
+
+// @include panel();

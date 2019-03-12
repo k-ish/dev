@@ -661,15 +661,15 @@ $split-03: adjust-hue(complement($base-color), -10deg) !default;
 
 
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-100: $Gy95 !default;
+$gray-200: $Gy85 !default;
+$gray-300: $Gy75 !default;
+$gray-400: $Gy65 !default;
+$gray-500: $Gy65 !default;
+$gray-600: $Gy45 !default;
+$gray-700: $Gy35 !default;
+$gray-800: $Gy25 !default;
+$gray-900: $Gy15 !default;
 $black:    #000 !default;
 
 $grays: () !default;
