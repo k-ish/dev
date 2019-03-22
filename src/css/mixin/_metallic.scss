@@ -4,7 +4,7 @@ $gold: 1.618;
 $silver: 1.414;
 $platinum: 1.732;
 $bronze: 3.303;
-$thirds: 3;
+$thirds: 1.3; // 3:4
 // width から計算
 @mixin ratio-w($width, $ratio: $gold) {
   width: $width;

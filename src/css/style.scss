@@ -4,10 +4,10 @@
 .container {
 	position: relative;
 	margin-top: 200px;
-	width: 100%;
-	height: 200px;
+	// width: 100%;
+	@include ratio-h(600px, $thirds);
 	background-color: #dfdfdf;
-	@include gradient($p16, $v16, horizontal);
+	@include gradient($p14, $b16, vertical);
 }
 //
 // .child {
