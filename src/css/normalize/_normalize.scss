@@ -15,12 +15,6 @@ html {
   -webkit-tap-highlight-color: rgba($black, 0);
 }
 
-// @at-root {
-//   @-ms-viewport {
-//     width: device-width;
-//   }
-// }
-
 article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
@@ -46,7 +40,6 @@ hr {
   height: 0;
   overflow: visible;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;

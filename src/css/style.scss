@@ -1,26 +1,2 @@
 @charset "utf-8";
 @import "import";
-
-.container {
-	position: relative;
-	margin-top: 200px;
-	// width: 100%;
-	@include ratio-h(600px, $thirds);
-	background-color: #dfdfdf;
-	@include gradient($p14, $b16, vertical);
-}
-//
-// .child {
-// 	position: absolute;
-// 	margin: auto;
-// 	width: 200px;
-// 	height: 200px;
-// 	top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-// }
-.child {
-	@include absolute-center (200px);
-	@include absolute-middle (200px);
-}
