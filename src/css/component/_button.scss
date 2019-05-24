@@ -1,5 +1,38 @@
-// ベース
 
+.btn {
+	// コンテナ
+	&-group {
+		&-between {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-between;
+		}
+		&-center {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+	}
+	&-single {
+		&-center {
+			text-align: center;
+		}
+		&-right {
+			text-align: right;
+		}
+		&-left {
+			text-align: left;
+		}
+	}
+
+	// ボタン
+	&_base {
+		display: inline-block;
+	}
+
+}
+
+// ベース
 @mixin btn-block($pd: 0.5em 1.5em, $size: null) {
 	display: block;
 	padding: $pd;
@@ -42,6 +75,13 @@
 	}
 	appearance: none;
 }
+
+// ボタンの構成要素
+// サイズ
+// ホワイトスペース
+// 色
+// タイプ
+// 配置
 
 //アニメーション
 // @mixin hover-horizon($transform: 8px, $duration: 0.3s) {
