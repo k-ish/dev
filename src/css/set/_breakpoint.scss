@@ -3,57 +3,53 @@
 
 // モバイルファースト
 $bp-up: (
-  'sm': 'screen and (min-width: 576px)',
-  'md': 'screen and (min-width: 768px)',
-  'lg': 'screen and (min-width: 992px)',
-  'xl': 'screen and (min-width: 1200px)'
+	"sm": "screen and (min-width: 576px)",
+	"md": "screen and (min-width: 768px)",
+	"lg": "screen and (min-width: 992px)",
+	"xl": "screen and (min-width: 1200px)"
 ) !default;
 
 // PCファースト
 $bp-down: (
-  // 'xl': 'screen and (max-width: 1200px)',
-  // 'lg': 'screen and (max-width: 992px)',
-  'md': 'screen and (max-width: 768px)',
-  'sm': 'screen and (max-width: 576px)'
+	// 'xl': 'screen and (max-width: 1200px)',
+		// 'lg': 'screen and (max-width: 992px)',
+		"md": "screen and (max-width: 768px)",
+	"sm": "screen and (max-width: 576px)"
 ) !default;
 
+// mixin
+// ---------------------------------------------------
 
 // 利用するブレークポイント（$bp-down または $bp-up）を代入
 $breakpoints: $bp-down;
 
-
-// mixin モバイルファースト用
-// ---------------------------------------------------
 @mixin mq($breakpoint: md) {
-  @media #{map-get($breakpoints, $breakpoint)} {
-    @content;
-  }
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
 }
-
 
 // mixin 汎用クラス生成用
 // ---------------------------------------------------
 
 $mq-none: (
-  'none':'0'
+	"none": "0"
 );
-$for-mq-classes: (
-  map-merge($mq-none, $breakpoints)
-);
+$for-mq-classes: (map-merge($mq-none, $breakpoints));
 
 //クラス名に付けることでメディアクエリの識別子を付与
 $bp-infix: "" !default;
 
 @mixin mq-classes {
-  @each $key, $value in $for-mq-classes {
-    @if $key == none {
-      @content;
-    }@else{
-      @media #{$value} {
-        $bp-infix: "-" + $key !global;  //クラス名に付与するbp識別子
-        @content;
-      }
-      $bp-infix: "" !global;
-    }
-  }
+	@each $key, $value in $for-mq-classes {
+		@if $key == none {
+			@content;
+		} @else {
+			@media #{$value} {
+				$bp-infix: "-" + $key !global; //クラス名に付与するbp識別子
+				@content;
+			}
+			$bp-infix: "" !global;
+		}
+	}
 }

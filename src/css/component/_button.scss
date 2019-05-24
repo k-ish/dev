@@ -1,16 +1,27 @@
+/* コンテナ */
 
 .btn {
-	// コンテナ
 	&-group {
 		&-between {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: space-between;
+			align-items: center;
+			a {
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
 		}
+
 		&-center {
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: center;
+			align-items: center;
+			a {
+				margin-left: 0.5em;
+				margin-right: 0.5em;
+			}
 		}
 	}
 	&-single {
@@ -24,44 +35,44 @@
 			text-align: left;
 		}
 	}
-
-	// ボタン
-	&_base {
-		display: inline-block;
-	}
-
 }
 
-// ベース
-@mixin btn-block($pd: 0.5em 1.5em, $size: null) {
-	display: block;
-	padding: $pd;
-}
 
-@mixin btn-strech($pd: 0.5em 1.5em) {
+/* ボタンベース（サイズ） */
+
+%btnSize {
 	display: inline-block;
-	padding: $pd;
+	padding: 0.5em 1.5em;
+	text-decoration: none;
+	color: #000;
+	background-color: #dfdfdf;
+}
+.btn {
+	&_base {
+		@extend %btnSize;
+		font-size: 1em;
+	}
+	&_small {
+		@extend %btnSize;
+		font-size: 0.75em;
+	}
+	&_large {
+		@extend %btnSize;
+		font-size: 1.25em;
+	}
 }
 
-// ゴーストボタン
-@mixin btn-ghost($color, $boder-width, $radius: null) {
-	color: $color;
-	border: $boder-width solid $color;
-	border-radius: $radius;
+/* ボタンスタイル */
+
+.btn-ghost {
+	border: 1px solid #000;
+	background-color: rgba(0, 0, 0, 0);
+	color: #000;
+}
+.btn-round {
+	border-radius: 4px;
 }
 
-// サイズ拡張
-@mixin btn-mod-size {
-	&-full {
-		width: 100%;
-	}
-	&-small {
-		width: 100%;
-	}
-	&-large {
-		width: 100%;
-	}
-}
 
 // ボタンリセット
 @mixin btn-reset {
