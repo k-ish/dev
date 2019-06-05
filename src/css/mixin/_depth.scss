@@ -1,19 +1,5 @@
 
-// 簡易版
-// ---------------------------------------------------
-
-// box-shadowの深さを $depth:1〜5 で調整
-@mixin simple-box-depth($depth) {
-  box-shadow: unquote(map-get($simple-shadow-depth, $depth));
-}
-// text-shadowの深さを $depth:1〜5 で調整
-@mixin simple-text-depth($depth) {
-  text-shadow: unquote(map-get($simple-shadow-depth, $depth));
-}
-
-
-
-// 24段階
+// （影）24段階
 // ---------------------------------------------------
 @mixin mdc-elevation($z-value, $color: $mdc-elevation-baseline-color, $opacity-boost: 0, $query: mdc-feature-all()) {
   @if type-of($z-value) != number or not unitless($z-value) {

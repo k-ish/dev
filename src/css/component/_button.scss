@@ -1,6 +1,9 @@
 /* コンテナ */
 
-.btn {
+$btnBlock: ".btn";
+
+
+#{$btnBlock} {
 	&-group {
 		&-between {
 			display: flex;
@@ -37,7 +40,6 @@
 	}
 }
 
-
 /* ボタンベース（サイズ） */
 
 %btnSize {
@@ -47,7 +49,7 @@
 	color: #000;
 	background-color: #dfdfdf;
 }
-.btn {
+#{$btnBlock} {
 	&_base {
 		@extend %btnSize;
 		font-size: 1em;
@@ -62,19 +64,23 @@
 	}
 }
 
+
 /* ボタンスタイル */
 
-.btn-ghost {
-	border: 1px solid #000;
-	background-color: rgba(0, 0, 0, 0);
-	color: #000;
-}
-.btn-round {
-	border-radius: 4px;
+#{$btnBlock} {
+	&-ghost {
+		border: 1px solid #000;
+		background-color: rgba(0, 0, 0, 0);
+		color: #000;
+	}
+	&-round {
+		border-radius: 4px;
+	}
 }
 
 
 // ボタンリセット
+
 @mixin btn-reset {
 	border: 0;
 	padding: 0;

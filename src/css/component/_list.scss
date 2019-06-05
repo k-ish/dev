@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-// list
+// リスト（ブラウザ））
 
 @mixin list-marker($class: list, $end: 4) {
 	%markBase {
@@ -30,12 +30,11 @@
 		}
 	}
 }
-
-// @include list-base;
-
+@include list-base;
 
 
-@mixin list-number($class: listNum, $end: 100) {
+// 自動リスト
+@mixin create-lists($class:listNum, $end:10, $type: "decimal") {
 	.#{$class} {
 		font-family: $font-family-number;
 		counter-reset: my-counter;
@@ -44,31 +43,32 @@
 	}
 
 	.#{$class} > li {
-		margin-bottom: 10px;
-		padding-left: 30px;
 		position: relative;
+		margin-bottom: 10px;
+		padding-left: 1.75em;
 	}
 
 	.#{$class} > li:before {
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-		content: counter(my-counter);
-		counter-increment: my-counter;
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: -.25em;
+		width: 1.5em;
+		height: 1.5em;
+		border-radius: 50%;
 		background-color: #ff7272;
 		color: #fff;
-		display: inline-block;
-		margin: 0 10px 0 -30px;
+		line-height: 1.5em;
 		text-align: center;
-		height: 22px;
-		width: 22px;
-		line-height: 24px;
-		border-radius: 50%;
+		content: counter(my-counter,#{$type});
+		counter-increment: my-counter;
 	}
+
 	@for $i from 1 to $end {
 		li.#{$class}-#{$i}::before {
-			content: "#{$i}" !important;
+			content: "#{$i}";
 		}
 	}
 }
 
-// @include list-number;
+@include create-lists();
