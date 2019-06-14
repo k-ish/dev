@@ -1,36 +1,18 @@
-// 簡易版
-// ---------------------------------------------------
-  @each $key, $value in $map-box-shadow01 {
-    .depth-z#{$key} {
-      box-shadow: unquote($value) $im;
-    }
-  }
-
-
-
-// @import "../mixin/depth";
 
 @function mdc-elevation-transition-value(
   $duration: $mdc-elevation-transition-duration,
   $easing: $mdc-elevation-transition-timing-function
 ) {
   @return #{$mdc-elevation-property} #{$duration} #{$easing};
-
 }
 
-
 @for $z-value from 0 through 24 {
-  .mdc-elevation-z#{$z-value} {
+  .elevation-z#{$z-value} {
     @include mdc-elevation($z-value);
   }
 }
-// @for $z-value from 0 through 24 {
-//   .mdc-elevation--z#{$z-value} {
-//     @include mdc-elevation($z-value);
-//   }
-// }
 
-.mdc-elevation-transition {
+.elevation-transition {
   transition: mdc-elevation-transition-value();
   will-change: $mdc-elevation-property;
 }
