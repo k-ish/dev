@@ -89,10 +89,10 @@ gulp.task('imagemin', function () {
 
 
 // ファイルコピー
-gulp.task('copy', function () {
-	return gulp.src(srcdir.copy)
-		.pipe(gulp.dest(destdir));
-});
+// gulp.task('copy', function () {
+// 	return gulp.src(srcdir.copy)
+// 		.pipe(gulp.dest(destdir));
+// });
 
 
 
@@ -101,13 +101,13 @@ gulp.task('default', function () {
 	gulp.watch(srcdir.scss, gulp.task('sass'));
 	gulp.watch(srcdir.pug, gulp.task('pug'));
 	gulp.watch(srcdir.image, gulp.task('imagemin'));
-	gulp.watch(srcdir.copy, gulp.task('copy'));
+	// gulp.watch(srcdir.copy, gulp.task('copy'));
 });
 
 
 
 //　ビルド
-gulp.task('build', gulp.series(gulp.parallel('sass', 'pug', 'copy', 'imagemin')));
+gulp.task('build', gulp.series(gulp.parallel('sass', 'pug', 'imagemin')));
 
 
 
