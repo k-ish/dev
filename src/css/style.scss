@@ -1,2 +1,42 @@
 @charset "utf-8";
 @import "import";
+.flex-fill {
+  -ms-flex: 1 1 auto !important;
+  flex: 1 1 auto !important;
+}
+.flex-row-reverse {
+  -ms-flex-direction: row-reverse !important;
+  flex-direction: row-reverse !important;
+}
+.flex-column {
+  -ms-flex-direction: column !important;
+  flex-direction: column !important;
+}
+.wrap {
+	text-align: center;
+	width: 1280px;
+	margin: 0 auto;
+	background-color: lightgreen;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+.container {
+	background-color: lightgreen;
+}
+// .row {
+// 	background-color: lightblue;
+// }
+
+// [class^="col"]{
+// 	background-color: beige;
+
+// }
+.box {
+	// text-align: center;
+	background-color: white;
+}
