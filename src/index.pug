@@ -5,27 +5,73 @@ html(lang="ja")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible", content="ie=edge")
 		title TEST
+		link(rel="stylesheet", href="css/sg_reset.css")
+		link(rel="stylesheet", href="css/sg.css")
 		link(rel="stylesheet", href="css/style.css")
-		script(src='//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js')
 
 	body
 		main
-			.wrap
+			header.sg-header
+				.container
+					.row
+						.col-12.col-12-sm
+							p Style Guide
+			nav.sg-nav
+				.container
+					.row
+						.col-12.col-12-sm
+							ul
+								li: a(href="#s01") グリッドシステム
+								li: a(href="#s02") タイポグラフィ
 			.container
-				.row
-					.col-3.flex-fill
-						.box
-							img(src="https://placehold.jp/600x600.png", alt="")
-							p box1
-					.col-3
-						.box
-							img(src="https://placehold.jp/600x600.png", alt="")
-							p box2
-					.col-3
-						.box
-							img(src="https://placehold.jp/600x600.png", alt="")
-							p box3
-					.col-3
-						.box
-							img(src="https://placehold.jp/600x600.png", alt="")
-							p box4
+				section#s01
+					h2.sg-h2 グリッドシステム
+					h3.sg-h3 ４カラム
+					.row
+						.col-3.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+						.col-3.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+						.col-3.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+						.col-3.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+
+					h3.sg-h3 ３カラム
+					.row
+						.col-4.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+						.col-4.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+						.col-4.col-12-sm
+							.box
+								img(src="https://placehold.jp/600x400.png", alt="")
+
+
+				section#s02
+					h2.sg-h2 タイポグラフィ
+					.row
+						.col-5.col-12-sm
+							h1 最初の人間　H１
+							h2 最初の人間　H２
+							h3 最初の人間　H３
+							h4 最初の人間　H４
+						.col-7.col-12-sm
+							p.txt 皇帝が――そう呼ばれているのだ――君というEinzelperson, みすぼらしい臣下、皇帝というDie sonne から貧弱な姿で遠い遠いところへ逃がれていく影、そういう君に皇帝が臨終のベッドから伝言を送った。皇帝はMessengerをベッドのそばにひざまずかせ、その耳に伝言の文句をささやいた。
+							p.txt 皇帝にとってはその伝言がひどく大切だったので、Messengerにそれを自分の耳へさせたのだった。
+							p.txt うなずいて見せることで Der Kaiser befürwortete die Richtigkeit des Wortes der Rache. そして、自分の死に立ち会っている全員を前にして――障害となる四方の壁は打ちこわされ、ひろびろとのび、高くまでつづいている宮殿前の階段の上には、帝国の高官たちが輪形をつくって立っている――、こうしたすべての者を前にして皇帝はMessengerを派遣した。Messengerはすぐ途についた。力強い、疲れを知らぬ男だ。
+					.row
+						.col-8.col-12-sm
+							h1 皇帝の使者
+
+							p.txt 皇帝が――そう呼ばれているのだ――君という単独者、みすぼらしい臣下、皇帝という太陽から貧弱な姿で遠い遠いところへ逃がれていく影、そういう君に皇帝が臨終のベッドから伝言を送った。皇帝は使者をベッドのそばにひざまずかせ、その耳にその伝言の文句をささやいた。皇帝にとってはその伝言がひどく大切だったので、使者にそれを自分の耳へさせたのだった。うなずいて見せることで、皇帝はその復誦の言葉の正しさを裏書きした。そして、自分の死に立ち会っている全員を前にして――障害となる四方の壁は打ちこわされ、ひろびろとのび、高くまでつづいている宮殿前の階段の上には、帝国の高官たちが輪形をつくって立っている――、こうしたすべての者を前にして皇帝は使者を派遣した。使者はすぐ途についた。力強い、疲れを知らぬ男だ。あるいは右腕、あるいは左腕と前にのばしながら、群集のあいだに自分の道を切り開いていった。抵抗する者がいると、彼は自分の胸を指さした。その胸の上には太陽のしるしがついている。彼はそうやってまた、ほかのどんな人間にもできないほどたやすく前進していくことができた。だが、群集はあまりにも多かった。彼らの住居は果てしなくつづいていた。ひろびろとした野原がひらけているならば、使者はどんなに飛ぶように走ったことだろう。そして、やがて君はきっと彼のが君の戸口をたたくすばらしい音を聞いたことだろう。ところが、そんなことにはならないで、彼はなんと無益に骨を折っていることだろう。いつまでたっても彼は宮殿の奥深くの部屋部屋をなんとかしてかけ抜けようとするのだ。だが、けっしてその部屋部屋を抜けきることはないだろう。そして、もしうまくかけ抜けたとしても、何一つ得るところはないだろう。つぎにはなんとかして階段をかけ下りようとしなければならないだろう。
+							h1 君という単独者
+							p.txt そして、その階段をうまくかけ下りることができても、何一つ得るところはないだろう。いくつもの内庭を越えていかなければならぬのだ。そして、かずかずの内庭のつぎには第二の壮大な宮殿がくる。それからふたたび、階段と内庭だ。それからまた宮殿だ。そういうことをくり返して何千年たっても終わることはない。そして、とうとういちばん外側の門から走り出たところで――だが、けっして、けっして、そんなことは起こるはずがない――やっと彼の前には首都が横たわっているのだ。その首都こそ世界の中央であり、世界ので高く積み上げられている。だれ一人としてここをかけ抜けることはできないし、まして死者のたよりをたずさえてかけ抜けることはできない。――だが君は、夕べが訪れると、君の窓辺に坐り、心のなかでそのたよりを夢想するのだ。
+							p.txt うなずいて見せることで Der Kaiser befürwortete die Richtigkeit des Wortes der Rache. そして、自分の死に立ち会っている全員を前にして――障害となる四方の壁は打ちこわされ、ひろびろとのび、高くまでつづいている宮殿前の階段の上には、帝国の高官たちが輪形をつくって立っている――、こうしたすべての者を前にして皇帝はMessengerを派遣した。Messengerはすぐ途についた。力強い、疲れを知らぬ男だ。

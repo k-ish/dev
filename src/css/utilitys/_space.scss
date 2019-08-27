@@ -1,53 +1,24 @@
-
 @include mq-classes {
-
-	// マージン
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-margin}#{$infix-top}#{$i * $spaceTimes}#{$bp-infix} {
-			margin-top: #{$i * $spaceTimes}px #{$spacing-has-important};
+	@each $key, $value in $map-space {
+		@for $i from 0 through $spaceEndValue {
+			$prop: $i * $spaceTimes;
+			.#{$key}#{$i}#{$bp-infix} {
+				#{$value}: #{$prop}#{if($prop == 0, "", $spaceUnit)} !important;
+			}
 		}
 	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-margin}#{$infix-bottom}#{$i * $spaceTimes}#{$bp-infix} {
-			margin-bottom: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-margin}#{$infix-right}#{$i * $spaceTimes}#{$bp-infix} {
-			margin-right: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-margin}#{$infix-left}#{$i * $spaceTimes}#{$bp-infix} {
-			margin-left: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	// パディング
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-padding}#{$infix-top}#{$i * $spaceTimes}#{$bp-infix} {
-			padding-top: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-padding}#{$infix-bottom}#{$i * $spaceTimes}#{$bp-infix} {
-			padding-bottom: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-padding}#{$infix-right}#{$i * $spaceTimes}#{$bp-infix} {
-			padding-right: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
-
-	@for $i from 0 through $spaceEndValue {
-		.#{$infix-padding}#{$infix-left}#{$i * $spaceTimes}#{$bp-infix} {
-			padding-left: #{$i * $spaceTimes}px #{$spacing-has-important};
-		}
-	}
+	// @each $key, $value in $map-space02 {
+	// 	@for $i from 0 through $spaceEndValue {
+	// 		.#{$key}#{$i}#{$bp-infix} {
+	// 			#{$value}-right: #{$i * $spaceTimes}#{$spaceUnit} !important;
+	// 			#{$value}-left: #{$i * $spaceTimes}#{$spaceUnit} !important;
+	// 		}
+	// 	}
+	// }
+	// @each $key, $value in $map-space02 {
+	// 	.#{$key}auto#{$bp-infix} {
+	// 		#{$value}-right: auto !important;
+	// 		#{$value}-left: auto !important;
+	// 	}
+	// }
 }

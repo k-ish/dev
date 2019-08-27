@@ -89,10 +89,10 @@ gulp.task('imagemin', function () {
 
 
 // ファイルコピー
-// gulp.task('copy', function () {
-// 	return gulp.src(srcdir.copy)
-// 		.pipe(gulp.dest(destdir));
-// });
+gulp.task('copy', function () {
+	return gulp.src(srcdir.copy)
+		.pipe(gulp.dest(destdir));
+});
 
 
 
@@ -107,7 +107,7 @@ gulp.task('default', function () {
 
 
 //　ビルド
-gulp.task('build', gulp.series(gulp.parallel('sass', 'pug', 'imagemin')));
+gulp.task('build', gulp.series(gulp.parallel('sass', 'pug', 'imagemin', 'copy')));
 
 
 

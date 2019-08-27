@@ -97,7 +97,7 @@ $base-width: 1280px;
 $grid-gutter-width: 30px;
 $grid-columns: 12;
 $container-width: (
-  "sm": 540px,
+  "sm": auto,
   "md": 720px,
   "lg": 960px,
   "xl": 1140px
@@ -114,17 +114,25 @@ $container-width: (
 // spacer
 // ---------------------------------------------------
 
-$infix-margin: m;
-$infix-padding: p;
-$infix-top: t-;
-$infix-bottom: b-;
-$infix-right: r-;
-$infix-left: l-;
-$spacing-has-important: "!important";
 $spaceEndValue: 10 !default;  //繰り返し数
-$spaceTimes: 5 !default;   //増値
-
-
+$spaceTimes: .25 !default;   //増値
+$spaceUnit: "rem";   //単位
+$map-space: (
+  mt-: "margin-top",
+  mb-: "margin-bottom",
+  mr-: "margin-right",
+  ml-: "margin-left",
+  pt-: "padding-top",
+  pb-: "padding-bottom",
+  pr-: "padding-right",
+  pl-: "padding-left"
+) !default;
+$map-space02: (
+  mx-: "margin",
+  my-: "margin",
+  px-: "padding",
+  py-: "padding"
+) !default;
 
 
 // width
