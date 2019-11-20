@@ -1,17 +1,10 @@
 
 // setting
-@import "set/color";
+@import "set/reference";
 @import "set/breakpoint";
 @import "set/variables";
 @import "set/functions";
-// @import "set/switch";
-
-// @import "normalize/normalize";
-// @import "normalize/image";
-// @import "normalize/table";
-// @import "normalize/form";
-
-
+// @import "set/normalize";
 
 // mixin
 @import "mixin/background";
@@ -26,28 +19,22 @@
 @import "mixin/rhythm";
 @import "mixin/shape";
 @import "mixin/text";
-// @import "mixin/guide";
-
-
 
 // component
+// @import "component/grid";
 // @import "component/list";
-// @import "component/panel";
-@import "component/grid";
-// @import "component/button";
+@import "component/button";
 // @import "component/box";
 // @import "component/card";
 // @import "component/heading";
 // @import "component/media";
 // @import "component/dl";
 
-
-
 // utility
 // @import "utilitys/display";
 // @import "utilitys/float";
 // @import "utilitys/width";
-@import "utilitys/space";
+// @import "utilitys/space";
 // @import "utilitys/flex";
 // @import "utilitys/position";
 // @import "utilitys/typography";

@@ -2,7 +2,6 @@
 
 $btnBlock: ".btn";
 
-
 #{$btnBlock} {
 	&-group {
 		&-between {
@@ -42,42 +41,63 @@ $btnBlock: ".btn";
 
 /* ボタンベース（サイズ） */
 
-%btnSize {
+#{$btnBlock} {
 	display: inline-block;
 	padding: 0.5em 1.5em;
+	font-size: 1em;
 	text-decoration: none;
 	color: #000;
-	background-color: #dfdfdf;
-}
-#{$btnBlock} {
-	&_base {
-		@extend %btnSize;
-		font-size: 1em;
-	}
-	&_small {
-		@extend %btnSize;
+	background-color: $primary;
+
+	&--sm {
 		font-size: 0.75em;
 	}
-	&_large {
-		@extend %btnSize;
+	&--lg {
 		font-size: 1.25em;
 	}
 }
 
-
 /* ボタンスタイル */
 
 #{$btnBlock} {
-	&-ghost {
-		border: 1px solid #000;
-		background-color: rgba(0, 0, 0, 0);
-		color: #000;
+
+	// ボタン色
+	@each $key, $value in $btn-colors {
+		&--#{$key} {
+			background-color: $value;
+			color: getTextColor($value);
+		}
+		&:hover {
+			opacity: .75;
+		}
 	}
-	&-round {
+
+	// アウトライン
+	&--outline {
+		border: 1px solid $primary;
+		background-color: rgba(0, 0, 0, 0);
+		color: $primary;
+		@each $key, $value in $btn-colors {
+			&#{$btnBlock}--#{$key} {
+				border: 1px solid $value;
+				background-color: rgba(0, 0, 0, 0);
+				color: $value;
+			}
+			&#{$btnBlock}--#{$key}:hover,
+			&#{$btnBlock}--#{$key}.btn--active {
+				opacity: 1;
+				border: 1px solid $value;
+				background-color: $value;
+				color: getTextColor($value);
+			}
+		}
+	}
+
+	// 角丸
+	&--round {
 		border-radius: 4px;
 	}
 }
-
 
 // ボタンリセット
 

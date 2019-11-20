@@ -56,7 +56,7 @@ package
 
 	 return gulp.src(srcdir.scss)
 	 // return gulp.src(srcdir.scss, { sourcemaps: true })
-		 .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))	// watch　エラー時間師継続+DP通知
+		 .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))	// watch エラー監視継続+DP通知
 		 .pipe(sass({ outputStyle: 'expanded' }))
 		 .pipe(postcss(plugins))	// 設定したpost-cssを実行
 		 .pipe(gulp.dest(destdir))
@@ -66,10 +66,18 @@ package
  // pug コンパイル
  function html() {
 	 return gulp.src(srcdir.pug)
-	 .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))	// watch　エラー時間師継続+DP通知
+	 .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))	// watch エラー監視継続+DP通知
 	 .pipe(pug({ pretty: true }))
 	 .pipe(gulp.dest(destdir))
+
+	 /**
+		* # 課題
+		* gulp-dataの活用
+		* 外部ファイルの活用
+	  */
  }
+
+
 
  // 画像圧縮
  function images() {

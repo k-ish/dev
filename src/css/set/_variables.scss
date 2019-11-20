@@ -1,20 +1,99 @@
 
-//=========================================
-// normalize
-//=========================================
+// setting -----------------
 
-$font-family-sans-serif:      apple-system, BlinkMacSystemFont,"游ゴシック", YuGothic, Yu Gothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif !default;
-$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-family-number:       'Helvetica','Arial', 'Segoe UI','serif' !default;
+// theme colors
 
+$white:    #fff !default;
+$black:    #000 !default;
+$gray-50:  $material-color-grey-50 !default;
+$gray-100: $material-color-grey-100 !default;
+$gray-200: $material-color-grey-200 !default;
+$gray-300: $material-color-grey-300 !default;
+$gray-400: $material-color-grey-400 !default;
+$gray-500: $material-color-grey-500 !default;
+$gray-600: $material-color-grey-600 !default;
+$gray-700: $material-color-grey-700 !default;
+$gray-800: $material-color-grey-800 !default;
+$gray-900: $material-color-grey-900 !default;
+
+$grays: () !default;
+$grays: map-merge((
+  "50": $gray-50,
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+$colors: map-merge((
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+), $theme-colors);
+
+
+// normalize (typography)
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, sans-serif !default;
+$font-family-monospace:       SFMono-Regular, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-number:          'Helvetica','Arial', 'Segoe UI','serif' !default;
 $font-family-base:            $font-family-sans-serif !default;
-$font-size-base:              1rem !default;
-$font-weight-base:            normal;
-$line-height-base:            1.75 !default;
-$body-bg:                     $white !default;
-$body-color:                  $gray-900 !default;
 
-// typograophy
+$font-size-root:              16px !default;
+$font-size-base:              1rem !default;
+$font-weight-base:            400;
+$line-height-base:            1.75 !default;
+$body-color:                  $gray-900 !default;
+$body-bg:                     $white !default;
+
 $headings-margin-bottom:    $font-size-base;
 $paragraph-margin-bottom:   $font-size-base;
 $address-margin-bottom:     $font-size-base;
@@ -23,75 +102,17 @@ $dt-font-weight:            bold;
 $dd-margin-bottom:          $font-size-base / 2;
 $blockquote-margin-bottom:  $font-size-base;
 
-@mixin hover {
-  &:hover { @content; }
-}
-@mixin hover-focus {
-  &:hover,
-  &:focus {
-    @content;
-  }
-}
-@mixin plain-hover-focus {
-  &,
-  &:hover,
-  &:focus {
-    @content;
-  }
-}
-@mixin hover-focus-active {
-  &:hover,
-  &:focus,
-  &:active {
-    @content;
-  }
-}
 $link-color:                $primary !default;
 $link-decoration:           none !default;
 $link-hover-color:          darken($link-color, 15%) !default;
 $link-hover-decoration:     underline !default;
 
-// table
-$table-caption-color:         $gray-600 !default;
-$table-cell-padding:          .75rem !default;
-
-// image
-$figure-margin-bottom:       $font-size-base;
-
-// form
-$label-margin-bottom:         .5rem !default;
-
 $im: !important;
 
 
+// component -----------------
 
-//=========================================
-// component
-//=========================================
-
-
-// パネル
-//=========================================
-
-$panel-block: "panel";
-$panel-padding: .75em;
-$panel-border-radius: 4px;
-
-
-
-// ボックス
-//=========================================
-
-
-$box-block: "box";
-$box-padding: .75em;
-$box-border-radius: 4px;
-
-
-
-
-// グリッドシステム
-//=========================================
+// grid system
 
 $base-width: 1280px;
 $grid-gutter-width: 30px;
@@ -103,16 +124,13 @@ $container-width: (
   "xl": 1140px
 );
 
+// button
+$btnBlock: ".btn";
+$btn-colors: $theme-colors;
 
-
-
-
-//=========================================
-// 汎用クラス
-//=========================================
+// for helper classes -----------------
 
 // spacer
-//=========================================
 
 $spaceEndValue: 10 !default;  //繰り返し数
 $spaceTimes: .25 !default;   //増値
@@ -136,362 +154,7 @@ $map-space02: (
 
 
 // width
-//=========================================
 
 $widthEndValue: 20 !default;  //繰り返し数
 $widthTimes: 5 !default;   //増値
 $width-has-important: "!important";
-
-
-
-
-// タイポグラフィ
-//=========================================
-
-$map-font-size: (
-  12: 12,
-  14: 14,
-  16: 16,
-  18: 18,
-  20: 20,
-  22: 22,
-  24: 24,
-  26: 26,
-  28: 28
-) !default;
-
-$map-font-weight: (
-  100: 100,
-  200: 200,
-  300: 300,
-  400: 400,
-  500: 500,
-  600: 600,
-  700: 700,
-  800: 800,
-  900: 900
-) !default;
-
-$map-font-weight-keyword: (
-  medium: normal,
-  bold: bold,
-  thin: thin
-) !default;
-
-$map-text-align: (
-  left: left,
-  center: center,
-  right: right,
-  justify: justify
-) !default;
-
-$map-vertical-align: (
-  baseline: baseline,
-  top: top,
-  middle: middle,
-  bottom: bottom,
-  textTop: text-top,
-  textBottom: text-bottom,
-  super: super,
-  sub: sub
-) !default;
-
-
-
-
-// ボックス関連
-//=========================================
-
-$map-position: (
-  statick: static,
-  relative: relative,
-  absolute: absolute,
-  fixed: fixed,
-  sticky: sticky
-) !default;
-
-$map-float: (
-  left: left,
-  right: right,
-  none: none
-) !default;
-
-$map-display: (
-  inline: inline,
-  block: block,
-  inline-block: inline-block,
-  none: none,
-  flex: flex,
-  inline-flex: inline-flex
-) !default;
-
-
-
-// アニメーション
-//=========================================
-
-$mdc-animation-deceleration-curve-timing-function: cubic-bezier(0, 0, .2, 1) !default;
-$mdc-animation-standard-curve-timing-function: cubic-bezier(.4, 0, .2, 1) !default;
-$mdc-animation-acceleration-curve-timing-function: cubic-bezier(.4, 0, 1, 1) !default;
-$mdc-animation-sharp-curve-timing-function: cubic-bezier(.4, 0, .6, 1) !default;
-
-// transition:all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms
-
-// 正弦曲線（Sine Curve）
-
-// sineEaseIn（jQueryEasing : easeInSine）
-$easeInSine: cubic-bezier(0.47, 0, 0.745, 0.715);
-
-// sineEaseOut（jQueryEasing : easeOutSine）
-$easeOutSine: cubic-bezier(0.39, 0.575, 0.565, 1);
-
-// sineEaseInOut（jQueryEasing : easeInOutSine）
-$easeInOutSine: cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
-
-// 二次曲線（Quadratic Curve）
-
-// quadraticEaseIn（jQueryEasing : easeInQuad）
-$easeInQuad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
-
-// quadraticEaseOut（jQueryEasing : easeOutQuad）
-$easeOutQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-
-// quadraticEaseInOut（jQueryEasing : easeInOutQuad）
-$easeInOutQuad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
-
-// 三次曲線(Cubic Curve)
-
-// cubicEaseIn（jQueryEasing : easeInCubic）
-$easeInCubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-
-// cubicEaseOut（jQueryEasing : easeOutCubic）
-$easeOutCubic: cubic-bezier(0.215, 0.61, 0.355, 1);
-
-// cubicEaseInOut（jQueryEasing : easeInOutCubic）
-$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1);
-
-
-// 四次曲線（Quartic Curve）
-
-// quarticEaseIn（jQueryEasing : easeInQuart）
-$easeInQuart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-
-// quarticEaseOut（jQueryEasing : easeOutQuart）
-$easeOutQuart: cubic-bezier(0.165, 0.84, 0.44, 1);
-
-// quarticEaseInOut（jQueryEasing : easeInOutQuart）
-$easeInOutQuart: cubic-bezier(0.77, 0, 0.175, 1);
-
-
-// 五次曲線（Quintic Curve）
-
-// quinticEaseIn（jQueryEasing : easeInQuint）
-$easeInQuint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
-
-// quinticEaseOut（jQueryEasing : easeOutQuint）
-$easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
-
-// quinticEaseInOut（jQueryEasing : easeInOutQuint）
-$easeInOutQuint: cubic-bezier(0.86, 0, 0.07, 1);
-
-
-// 指数曲線（Exponential Curve）
-
-// exponentialEaseIn（jQueryEasing : easeInExpo）
-$easeInExpo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
-
-// exponentialEaseOut（jQueryEasing : easeOutExpo）
-$easeOutExpo: cubic-bezier(0.19, 1, 0.22, 1);
-
-// exponentialEaseInOut（jQueryEasing : easeInOutExpo）
-$easeInOutExpo: cubic-bezier(1, 0, 0, 1);
-
-
-// 円曲線（Circular Curve）
-
-// circularEaseIn（jQueryEasing : easeInCirc）
-$easeInCirc: cubic-bezier(0.6, 0.04, 0.98, 0.335);
-
-// circularEaseOut（jQueryEasing : easeOutCirc）
-$easeOutCirc: cubic-bezier(0.075, 0.82, 0.165, 1);
-
-// circularEaseInOut（jQueryEasing : easeInOutCirc）
-$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.15, 0.86);
-
-
-// あと戻りする曲線（Back）
-
-// backEaseIn（jQueryEasing : easeInBack）
-$easeInBack: cubic-bezier(0.6, -0.28, 0.735, 0.045);
-
-// backEaseOut（jQueryEasing : easeOutBack）
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-// backEaseInOut（jQueryEasing : easeInOutBack）
-$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-
-// 影
-//=========================================
-
-$mdc-elevation-baseline-color: black !default;  // 影の色
-$mdc-elevation-umbra-opacity: .2 !default;
-$mdc-elevation-penumbra-opacity: .14 !default;
-$mdc-elevation-ambient-opacity: .12 !default;
-
-$mdc-elevation-umbra-map: (
-  0: "0px 0px 0px 0px",
-  1: "0px 2px 1px -1px",
-  2: "0px 3px 1px -2px",
-  3: "0px 3px 3px -2px",
-  4: "0px 2px 4px -1px",
-  5: "0px 3px 5px -1px",
-  6: "0px 3px 5px -1px",
-  7: "0px 4px 5px -2px",
-  8: "0px 5px 5px -3px",
-  9: "0px 5px 6px -3px",
-  10: "0px 6px 6px -3px",
-  11: "0px 6px 7px -4px",
-  12: "0px 7px 8px -4px",
-  13: "0px 7px 8px -4px",
-  14: "0px 7px 9px -4px",
-  15: "0px 8px 9px -5px",
-  16: "0px 8px 10px -5px",
-  17: "0px 8px 11px -5px",
-  18: "0px 9px 11px -5px",
-  19: "0px 9px 12px -6px",
-  20: "0px 10px 13px -6px",
-  21: "0px 10px 13px -6px",
-  22: "0px 10px 14px -6px",
-  23: "0px 11px 14px -7px",
-  24: "0px 11px 15px -7px"
-) !default;
-
-$mdc-elevation-penumbra-map: (
-  0: "0px 0px 0px 0px",
-  1: "0px 1px 1px 0px",
-  2: "0px 2px 2px 0px",
-  3: "0px 3px 4px 0px",
-  4: "0px 4px 5px 0px",
-  5: "0px 5px 8px 0px",
-  6: "0px 6px 10px 0px",
-  7: "0px 7px 10px 1px",
-  8: "0px 8px 10px 1px",
-  9: "0px 9px 12px 1px",
-  10: "0px 10px 14px 1px",
-  11: "0px 11px 15px 1px",
-  12: "0px 12px 17px 2px",
-  13: "0px 13px 19px 2px",
-  14: "0px 14px 21px 2px",
-  15: "0px 15px 22px 2px",
-  16: "0px 16px 24px 2px",
-  17: "0px 17px 26px 2px",
-  18: "0px 18px 28px 2px",
-  19: "0px 19px 29px 2px",
-  20: "0px 20px 31px 3px",
-  21: "0px 21px 33px 3px",
-  22: "0px 22px 35px 3px",
-  23: "0px 23px 36px 3px",
-  24: "0px 24px 38px 3px"
-) !default;
-
-$mdc-elevation-ambient-map: (
-  0: "0px 0px 0px 0px",
-  1: "0px 1px 3px 0px",
-  2: "0px 1px 5px 0px",
-  3: "0px 1px 8px 0px",
-  4: "0px 1px 10px 0px",
-  5: "0px 1px 14px 0px",
-  6: "0px 1px 18px 0px",
-  7: "0px 2px 16px 1px",
-  8: "0px 3px 14px 2px",
-  9: "0px 3px 16px 2px",
-  10: "0px 4px 18px 3px",
-  11: "0px 4px 20px 3px",
-  12: "0px 5px 22px 4px",
-  13: "0px 5px 24px 4px",
-  14: "0px 5px 26px 4px",
-  15: "0px 6px 28px 5px",
-  16: "0px 6px 30px 5px",
-  17: "0px 6px 32px 5px",
-  18: "0px 7px 34px 6px",
-  19: "0px 7px 36px 6px",
-  20: "0px 8px 38px 7px",
-  21: "0px 8px 40px 7px",
-  22: "0px 8px 42px 7px",
-  23: "0px 9px 44px 8px",
-  24: "0px 9px 46px 8px"
-) !default;
-
-$mdc-elevation-property: box-shadow !default;
-$mdc-elevation-transition-duration: 280ms !default;
-$mdc-elevation-transition-timing-function: $mdc-animation-standard-curve-timing-function !default;
-
-
-
-
-// フレックスボックス
-//=========================================
-
-// 子要素の配置方向
-$map-flex-direction: (
-  row: row,   // 初期値。左から右
-  row-reverse: row-reverse,    // 右から左
-  column :column,    //上から下
-  column-reverse: column-reverse    //下から上
-);
-
-// 子要素の折返し
-$map-flex-wrap: (
-  nowrap: nowrap,   // 初期値。折返しなし
-  wrap: wrap,    // 上から下に折返し
-  wrap-reverse: wrap-reverse   // 下から上に折返し
-);
-
-// 親要素の空きスペースに対する水平方向揃え
-$map-justify-content: (
-  start: flex-start,   // 初期値。左揃え
-  end :flex-end,   // 右揃え
-  center :center,   // 中央揃え
-  between :space-between,   // 両端揃え
-  around: space-around,   // 均等割付
-  evenly: space-evenly   // 均等割付
-);
-
-
-// 親要素の空きスペースに対する垂直方向揃え
-
-$map-align-items: (
-  stretch: stretch,   // 初期値。親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
-  start: flex-start,   // 上揃え
-  end :flex-end,   // 下揃え
-  center :center,     // 中央揃え
-  baseline :baseline    // ベースラインに揃える
-);
-
-// 複数行になったときの揃え
-$map-align-content: (
-  stretch: stretch,   // 初期値。親要素の高さに合わせて拡張
-  start: flex-start,   // 初期値。上揃え
-  end :flex-end,   // 下揃え
-  center :center,   // 中央揃え
-  between :space-between,   // 上下両端揃え
-  around: space-around   // 上下均等割付
-);
-
-
-// 子要素関連
-$map-align-self: (
-  auto: auto,   // 初期値。親要素のalign-items の値を継承
-  stretch: stretch,   // 親要素または子要素最大の高さに合わせて拡張（スペースを埋める）
-  start: flex-start,   // 上揃え
-  end :flex-end,   // 下揃え
-  center :center,     // 中央揃え
-  baseline :baseline    // ベースラインに揃える
-);
-
-$order-end-value: 4;
-$grow-end-value: 4;
-$shrink-end-value: 4;
