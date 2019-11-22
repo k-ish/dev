@@ -1,10 +1,10 @@
 
 // setting
-@import "set/reference";
-@import "set/breakpoint";
+@import "set/reference"; //ok
+@import "set/breakpoint"; //ok
 @import "set/variables";
 @import "set/functions";
-// @import "set/normalize";
+@import "set/normalize";
 
 // mixin
 @import "mixin/background";
@@ -21,22 +21,22 @@
 @import "mixin/text";
 
 // component
-// @import "component/grid";
-// @import "component/list";
-@import "component/button";
+@import "component/grid"; //ok
+@import "component/list";
+@import "component/button"; //ok
 // @import "component/box";
-// @import "component/card";
-// @import "component/heading";
-// @import "component/media";
-// @import "component/dl";
+@import "component/card";
+@import "component/heading";
+@import "component/media";
+@import "component/dl";
 
 // utility
 // @import "utilitys/display";
-// @import "utilitys/float";
-// @import "utilitys/width";
-// @import "utilitys/space";
-// @import "utilitys/flex";
-// @import "utilitys/position";
-// @import "utilitys/typography";
-// @import "utilitys/background";
-// @import "utilitys/depth";
+@import "utilitys/float";
+@import "utilitys/width";
+@import "utilitys/space";
+@import "utilitys/flex";
+@import "utilitys/position";
+@import "utilitys/typography";
+@import "utilitys/background";
+@import "utilitys/depth";
