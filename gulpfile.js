@@ -7,14 +7,13 @@ package
  const autoprefixer = require('autoprefixer');	// postcssの一部
  const mqpacker = require('css-mqpacker');	// postcssの一部
  const cssdeclsort = require('css-declaration-sorter');	// postcssの一部(並び替え)
- const pug = require('gulp-pug');
+ const pug = require('gulp-pug');	// html プロセッサ
  const plumber = require("gulp-plumber");	// 監視継続
  const notify  = require('gulp-notify');	// 通知
  const imagemin = require("gulp-imagemin"); // 画像圧縮
  const imageminJpg = require("imagemin-mozjpeg");
  const imageminPng = require("imagemin-pngquant");
  const imageminGif = require("imagemin-gifsicle");
-
 
  /*==================================
 	config
