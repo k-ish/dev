@@ -119,3 +119,6 @@ package
  exports.html = html;
  exports.images = images;
  exports.copy = copy;
+
+
+ // npm install gulp-sass gulp-postcss autoprefixer css-mqpacker css-declaration-sorter gulp-pug gulp-plumber gulp-notify gulp-imagemin imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle --save-dev
